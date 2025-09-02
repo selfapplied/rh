@@ -105,18 +105,13 @@ CE1{
 }
 ```
 
-### What the numbers mean (plain language)
+### How to read the CE1 summary
 
-- On-line: we test points on the critical line (σ = 1/2) over a small window in t. Locked means the integer sandwich gap ≥ γ using the Metanion–Pascal phaselock. A good certificate has a high on-line locked rate (near 100%).
-- Off-line: we test points slightly off the line (σ = 1/2 + d) over the same window. A good certificate has a low off-line locked rate (near 0%).
+- total: number of points tested in the window around the listed zeros.
+- online_locked: how many on the critical line (σ=1/2) achieved gap ≥ γ.
+- online_ratio: online_locked / total. A successful run has online_ratio ≈ 1.0.
 
-Parameters at defaults:
-- depth=4 → N = 2^depth + 1 = 17 (resolution)
-- γ=3 → required integer gap to count as locked
-- d=0.05 → how far off the line we test
-- window, step → size and granularity of the t-sweep around zeros
-
-In short: the certificate succeeds if it locks on the line and fails off the line across the window.
+Defaults used here: depth=4 (N=17), γ=3, d=0.05, window=0.5, step=0.1.
 
 ## License
 MIT unless noted otherwise.
