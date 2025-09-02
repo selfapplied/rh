@@ -126,15 +126,17 @@ Glossary
 | --- | --- |
 | σ (sigma) | Real part of s = σ + it; critical line is σ = 1/2 |
 | t | Imaginary part of s; we sweep a window in t around each zero |
-| K_N | Even smoothing kernel (Pascal/binomial–based), normalized |
-| E_N | Smoothed drift: $E_N(\sigma,t) = (\partial_\sigma \log|\xi| * K_N)(\sigma,t)$ |
-| Φ | Map from $E_N$ to binary mask/template $(M_N,T_N)$ (Lipschitz) |
-| G_N | Dihedral integer gap (winner minus runner-up, mate excluded) |
+| $K_N$ | Even smoothing kernel (Pascal/binomial–based), normalized |
+| $E_N$ (drift) | Smoothed drift: $E_N(\sigma,t) = (\partial_\sigma \log|\xi| * K_N)(\sigma,t)$ |
+| Φ (Lipschitz) | Map $E_N \mapsto (M_N,T_N)$; Lipschitz: $d_H(\Phi(E),\Phi(E')) \le \tfrac{c_\Phi}{N}\,\|E{-}E'\|$ |
+| $G_N$ | Dihedral integer gap (winner minus runner-up, mate excluded) |
 | γ (gamma) | Gap threshold; lock if $G_N \ge \gamma$ |
 | λ (lambda) | Integer scaling $2^q$ for the integer sandwich |
-| W_± | Integer majorant/minorant around $\lambda K_N$ with equal mass |
-| (s,r) | Dihedral action: shift s and reflection flag r ∈ {False, True} |
-| mate | The paired action $(\!-s, \neg r)$ excluded from runner-up |
+| $W_\pm$ | Integer majorant/minorant around $\lambda K_N$ with equal mass |
+| Action $(s,r)$ | Dihedral action: shift $s$ and reflection flag $r\in\{\mathrm{False},\mathrm{True}\}$ |
+| Runner-up | Second-best score among $2N$ actions with the mate excluded |
+| Dihedral | Refers to the dihedral group $D_N$ (rotations/reflections over $N$ points) |
+| Mate | The paired action $(\!-s, \neg r)$ excluded from runner-up |
 
 ## License
 MIT unless noted otherwise.
