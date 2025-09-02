@@ -169,6 +169,43 @@ class RHIntegerAnalyzer:
             "lock_reason": reason, "intervals": intervals
         }
 
+    def analyze_point_metanion(self, s: complex, zeros: List[complex]) -> Dict[str, Any]:
+        """Metanion-informed phaselock: build mask/template from smoothed drift E_N.
+
+        Uses GyroscopeLoss.smooth_omega_sigma via a Pascal kernel to generate
+        dihedrally-contrasted mask/template that scale with d = |Re(s)-1/2|.
+        """
+        sigma, t = s.real, s.imag
+        kernel = PascalKernel(self.N, self.depth)
+
+        # Build mask/template driven by E_N magnitude
+        mask, template = QuantitativeGapAnalyzer.create_e_n_based_mask(
+            sigma, t, self.N, zeros, kernel
+        )
+
+        correlations = self.correlator.correlate_all_actions(mask, template)
+        locked, winning_action, gap, reason = lock_decision(correlations)
+
+        rotations = correlations["rotations"]
+        reflections = correlations["reflections"]
+        if max(rotations) > max(reflections):
+            best_action = DihedralAction(rotations.index(max(rotations)), False)
+        else:
+            best_action = DihedralAction(reflections.index(max(reflections)), True)
+
+        return {
+            "s": s,
+            "depth": self.depth,
+            "N": self.N,
+            "mask": mask,
+            "template": template,
+            "best_action": best_action,
+            "is_locked": locked,
+            "gap": gap,
+            "lock_reason": reason,
+            "method": "metanion"
+        }
+
 @dataclass
 class Quaternion:
     i: float; j: float; k: float
@@ -544,44 +581,30 @@ class QuantitativeGapAnalyzer:
     @staticmethod
     def create_e_n_based_mask(sigma: float, t: float, N: int, zeros: List[complex], kernel: PascalKernel) -> Tuple[List[int], List[int]]:
         """Create mask and template based on E_N values to create proper dihedral contrast"""
-        
         # Compute E_N for the given σ, t
         E_N = GyroscopeLoss.smooth_omega_sigma(sigma, t, zeros, kernel)
-        
-        # The key insight: E_N scales linearly with d = |σ-½|
-        # We want the contrast to scale with d to create the certification switch
-        
-        # Create a mask that varies with E_N magnitude
-        mask = []
-        template = []
-        
-        # Use E_N to create position-dependent patterns
         E_magnitude = abs(E_N)
-        
-        # The critical insight: we need contrast that scales with d
-        # Near critical line (d≈0): minimal contrast → small gap
-        # Off critical line (d>0): larger contrast → larger gap
-        
-        for i in range(N):
-            # Create pattern that scales with E_N magnitude
-            # This ensures the contrast grows with d
-            if E_magnitude < 0.001:
-                # Very near critical line: minimal contrast
-                mask.append(1 if i % 2 == 0 else 0)
-                template.append(1 if i % 2 == 1 else 0)
-            elif E_magnitude < 0.01:
-                # Near critical line: small contrast
-                mask.append(1 if i % 3 == 0 else 0)
-                template.append(1 if i % 3 == 1 else 0)
-            elif E_magnitude < 0.1:
-                # Moderate offset: medium contrast
-                mask.append(1 if i % 2 == 0 else 0)
-                template.append(0 if i % 2 == 0 else 1)
-            else:
-                # Large offset: strong contrast
-                mask.append(1 if i < N//2 else 0)
-                template.append(0 if i < N//2 else 1)
-        
+        E_sign = 1 if E_N >= 0 else -1
+
+        # Map |E_N| to block size to create strong dihedral contrast
+        # Small |E_N| → small blocks (alternating), large |E_N| → large blocks (half/half)
+        min_block = 1
+        max_block = max(2, N // 2)
+        scale = max(1.0, N)  # rough scaling
+        block = int(min_block + min(max_block - min_block, E_magnitude * scale))
+        block = max(min_block, min(block, max_block))
+
+        # Build block pattern: repeating [1]*block + [0]*block
+        pattern = []
+        while len(pattern) < N:
+            pattern.extend([1] * block)
+            pattern.extend([0] * block)
+        pattern = pattern[:N]
+
+        # Shift pattern by sign to break symmetry around center
+        shift = (block // 2) if E_sign < 0 else 0
+        mask = [pattern[(i + shift) % N] for i in range(N)]
+        template = [1 - x for x in mask]
         return mask, template
     
     @staticmethod

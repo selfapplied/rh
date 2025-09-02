@@ -51,6 +51,13 @@ def simple_demo():
         
         print(f"\n✅ Basic system is working!")
         
+        # Metanion-informed phaselock demo
+        print(f"\n🧭 Metanion-informed phaselock demo:")
+        zeros = [0.5+14.134725j, 0.5+21.022040j, 0.5+25.010858j]
+        s = complex(0.5, 14.134725)
+        meta = analyzer.analyze_point_metanion(s, zeros)
+        print(f"   Locked={meta['is_locked']}, gap={meta['gap']}, best={meta['best_action']}, method={meta['method']}")
+        
     except Exception as e:
         print(f"❌ Error: {e}")
         import traceback
