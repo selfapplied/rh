@@ -18,8 +18,18 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -U pip
 pip install -r requirements.txt
-python simple_demo.py
+python rieman.py
 ```
+
+## Certification
+
+Generate a certification report (defaults: depth=4, gamma=3, d=0.05):
+
+```bash
+python certify.py --out .out/certs
+```
+
+This writes a TOML file under `.out/certs/` with on-line/off-line lock rates. CI runs the same check and uploads artifacts.
 
 ## License
 MIT unless noted otherwise.

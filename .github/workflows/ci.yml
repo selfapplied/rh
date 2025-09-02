@@ -23,3 +23,25 @@ jobs:
           uv pip install pytest
       - name: Run tests with uv
         run: uv run pytest -q
+
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v3
+      - name: Install runtime deps
+        run: |
+          uv pip install pytest
+      - name: Run certification (depth=4, gamma=3, d=0.05)
+        run: |
+          uv run python certify.py --depth 4 --gamma 3 --d 0.05 --window 0.5 --step 0.1 --out .out/certs --require-online-rate 0.95 --require-offline-rate 0.05
+      - name: Upload cert artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: certs
+          path: .out/certs
