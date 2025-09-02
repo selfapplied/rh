@@ -113,5 +113,21 @@ CE1{
 
 Defaults used here: depth=4 (N=17), γ=3, d=0.05, window=0.5, step=0.1.
 
+### Zeros and parameters
+
+Zeros
+- The values listed in `zeros=[…]` are the imaginary parts of known nontrivial zeros of ζ on the critical line (e.g., 14.134725…). We center a small window in t around each zero to test behavior on σ=1/2 and compare to σ=1/2+d.
+
+Parameters
+
+| Param | Meaning |
+| --- | --- |
+| depth | Controls resolution; N = 2^depth + 1 |
+| N | Number of samples in the dihedral mask/template |
+| gamma | Required integer gap to count as “locked” |
+| d | Offset used for off-line comparison (σ = 1/2 + d) |
+| window | Half-width of t-window around each listed zero |
+| step | Increment for the t-sweep within the window |
+
 ## License
 MIT unless noted otherwise.
