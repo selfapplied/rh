@@ -99,8 +99,8 @@ CE1{
   basis=metanion:pascal_dihedral
   params{ depth=4; N=17; gamma=3; d=0.05; window=0.5; step=0.1 }
   zeros=[14.134725; 21.02204; 25.010858]
-  summary{ online_locked_rate=1.0; offline_locked_rate=0.0; online_total=33; offline_total=33; online_locked=33; offline_locked=0 }
-  artifact=.out/certs/cert-depth4-N17-20250902-042232.toml
+  summary{ total=33; online_locked=33; online_ratio=1.0 }
+  artifact=.out/certs/cert-depth4-N17-20250902-042605.toml
   emit=RiemannHypothesisCertification
 }
 ```

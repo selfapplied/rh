@@ -59,6 +59,39 @@ def write_toml(path: str, data: Dict[str, Any]) -> None:
         f.write("".join(lines))
 
 
+def write_ce1(path: str, meta: Dict[str, Any]) -> None:
+    """Write a CE1 block capturing the certification result."""
+    zeros_list = "; ".join(f"{z}" for z in meta["zeros"]) if isinstance(
+        meta.get("zeros"), list) else str(meta.get("zeros"))
+    summary = meta.get("summary", {})
+    params = meta.get("params", {})
+    params_str = "; ".join(f"{k}={v}" for k, v in params.items())
+    ce1 = []
+    ce1.append("CE1{\n")
+    ce1.append("  lens=RH_CERT\n")
+    ce1.append("  mode=Certification\n")
+    ce1.append("  basis=metanion:pascal_dihedral\n")
+    ce1.append(f"  params{{ {params_str} }}\n")
+    ce1.append(f"  zeros=[{zeros_list}]\n")
+    total = summary.get('online_total', 0)
+    online_locked = summary.get('online_locked', 0)
+    online_ratio = (online_locked / total) if total else 0
+    ce1.append("  summary{ ")
+    ce1.append("; ".join(
+        [
+            f"total={total}",
+            f"online_locked={online_locked}",
+            f"online_ratio={online_ratio}",
+        ]
+    ))
+    ce1.append(" }\n")
+    ce1.append(f"  artifact={meta.get('artifact', '')}\n")
+    ce1.append("  emit=RiemannHypothesisCertification\n")
+    ce1.append("}\n")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("".join(ce1))
+
+
 def sweep_cert(depth: int, zeros: List[float], window: float, step: float, d: float, gamma: int, out_dir: str) -> Dict[str, Any]:
     analyzer = RHIntegerAnalyzer(depth=depth)
     N = analyzer.N
@@ -132,9 +165,28 @@ def sweep_cert(depth: int, zeros: List[float], window: float, step: float, d: fl
 
     ts = time.strftime("%Y%m%d-%H%M%S")
     makedirs(out_dir)
-    out_path = os.path.join(out_dir, f"cert-depth{depth}-N{N}-{ts}.toml")
-    write_toml(out_path, results)
-    return {"out_path": out_path, "results": results}
+    base = f"cert-depth{depth}-N{N}-{ts}"
+    out_toml = os.path.join(out_dir, f"{base}.toml")
+    write_toml(out_toml, results)
+
+    # CE1 companion
+    ce1_meta = {
+        "zeros": zeros,
+        "summary": results["summary"],
+        "artifact": out_toml,
+        "params": {
+            "depth": depth,
+            "N": N,
+            "gamma": gamma,
+            "d": d,
+            "window": window,
+            "step": step,
+        },
+    }
+    out_ce1 = os.path.join(out_dir, f"{base}.ce1")
+    write_ce1(out_ce1, ce1_meta)
+
+    return {"out_path": out_toml, "out_ce1": out_ce1, "results": results}
 
 
 def main():
