@@ -140,6 +140,46 @@ class DihedralCorrelator:
         c_reflections = self.ntt.circular_correlation(A, V[::-1])
         return {"rotations": c_rotations, "reflections": c_reflections}
 
+    def _build_length_N_pascal_weights(self) -> List[int]:
+        """Map Pascal row (length depth+1) to length-N integer weights.
+
+        Uses nearest-index mapping i -> k = round(i * depth/(N-1)), then scales
+        normalized kernel by λ = 2^8 to integers.
+        """
+        kernel = PascalKernel(self.N, self.depth)
+        norm_row = kernel.get_normalized_kernel()  # length depth+1
+        m = self.depth
+        weights_float = []
+        for i in range(self.N):
+            k = round(i * m / (self.N - 1))
+            k = max(0, min(m, k))
+            weights_float.append(norm_row[k])
+        lam = 1 << 8
+        weights_int = [max(1, int(round(w * lam))) for w in weights_float]
+        return weights_int
+
+    def correlate_all_actions_weighted(self, mask: List[int], template: List[int]) -> Dict[str, List[int]]:
+        """Weighted dihedral correlation using length-N Pascal-derived weights.
+
+        Computes scores by: score_s = sum_i w[i]*A[i]*V[(i+s)%N], with A,V in {±1}.
+        """
+        N = self.N
+        weights = self._build_length_N_pascal_weights()
+        A = [2*x - 1 for x in mask]
+        V = [2*x - 1 for x in template]
+        rot = []
+        ref = []
+        for s in range(N):
+            rot_score = 0
+            ref_score = 0
+            for i in range(N):
+                j = (i + s) % N
+                rot_score += weights[i] * A[i] * V[j]
+                ref_score += weights[i] * A[i] * V[(N - 1 - j)]
+            rot.append(rot_score)
+            ref.append(ref_score)
+        return {"rotations": rot, "reflections": ref}
+
 @dataclass
 class RHIntegerAnalyzer:
     depth: int = 2
@@ -178,32 +218,41 @@ class RHIntegerAnalyzer:
         sigma, t = s.real, s.imag
         kernel = PascalKernel(self.N, self.depth)
 
-        # Build mask/template driven by E_N magnitude
+        # Build base mask/template driven by E_N magnitude
         mask, template = QuantitativeGapAnalyzer.create_e_n_based_mask(
             sigma, t, self.N, zeros, kernel
         )
 
-        correlations = self.correlator.correlate_all_actions(mask, template)
-        locked, winning_action, gap, reason = lock_decision(correlations)
+        # Shift template keyed by sign/magnitude of E_N to separate rotations/reflections
+        E_N = GyroscopeLoss.smooth_omega_sigma(sigma, t, zeros, kernel)
+        e_sign = 1 if E_N >= 0 else -1
+        mag = abs(E_N)
+        # shift amplitude in [1, N//4]
+        max_shift = max(1, self.N // 4)
+        shift_amt = max(1, min(max_shift, int(1 + mag * self.N)))
+        k = (e_sign * shift_amt) % self.N
+        template_shifted = [template[(i + k) % self.N] for i in range(self.N)]
 
-        rotations = correlations["rotations"]
-        reflections = correlations["reflections"]
-        if max(rotations) > max(reflections):
-            best_action = DihedralAction(rotations.index(max(rotations)), False)
-        else:
-            best_action = DihedralAction(reflections.index(max(reflections)), True)
+        # Use exact integer-sandwich scorer for decisive gap
+        winner_idx, runner_up_idx, gap, mate = IntegerSandwich.compute_dihedral_scores_exact(
+            mask, template_shifted, self.N
+        )
+        is_reflection = winner_idx >= self.N
+        shift = winner_idx % self.N
+        best_action = DihedralAction(shift, is_reflection)
+        locked = gap >= 2
 
         return {
             "s": s,
             "depth": self.depth,
             "N": self.N,
             "mask": mask,
-            "template": template,
+            "template": template_shifted,
             "best_action": best_action,
             "is_locked": locked,
             "gap": gap,
-            "lock_reason": reason,
-            "method": "metanion"
+            "lock_reason": ("locked" if locked else f"gap_insufficient_{gap}_<_2"),
+            "method": "metanion+pascal+shifted+sandwich"
         }
 
 @dataclass
