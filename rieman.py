@@ -6,6 +6,7 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from rh import RHIntegerAnalyzer, DihedralAction
+from pascal import pascal_nested_brackets
 
 def simple_demo():
     """Simple demonstration of what's currently working"""
@@ -57,6 +58,17 @@ def simple_demo():
         s = complex(0.5, 14.134725)
         meta = analyzer.analyze_point_metanion(s, zeros)
         print(f"   Locked={meta['is_locked']}, gap={meta['gap']}, best={meta['best_action']}, method={meta['method']}")
+
+        # Pascal-space demo (migrated from main.py)
+        print("\n📐 Pascal-Space Bracket Demo:")
+        x = 0.5
+        brackets = pascal_nested_brackets(x, 2, 4)
+        if brackets:
+            b = brackets[-1]
+            print(f"  Bracket for x={x:.6f} at depth={b.depth}:")
+            print(f"    Index: {b.cell_index}")
+            print(f"    Interval: [{b.lower_bound:.6f}, {b.upper_bound:.6f}]")
+            print(f"    Weight: C({b.N},{b.cell_index})")
         
     except Exception as e:
         print(f"❌ Error: {e}")
