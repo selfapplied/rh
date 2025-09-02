@@ -127,7 +127,7 @@ Glossary
 | σ (sigma) | Real part of s = σ + it; critical line is σ = 1/2 |
 | t | Imaginary part of s; we sweep a window in t around each zero |
 | $K_N$ | Even smoothing kernel (Pascal/binomial–based), normalized |
-| $E_N$ (drift) | Smoothed drift: $E_N(\sigma,t) = (\partial_\sigma \log|\xi| * K_N)(\sigma,t)$ |
+| $E_N$ (drift) | Smoothed drift: $E_N(\sigma,t) = (\partial_\sigma \log\xi * K_N)(\sigma,t)$ |
 | Φ (Lipschitz) | Map $E_N \mapsto (M_N,T_N)$; Lipschitz: $d_H(\Phi(E),\Phi(E')) \le \tfrac{c_\Phi}{N}\,\|E{-}E'\|$ |
 | $G_N$ | Dihedral integer gap (winner minus runner-up, mate excluded) |
 | γ (gamma) | Gap threshold; lock if $G_N \ge \gamma$ |
@@ -137,6 +137,13 @@ Glossary
 | Runner-up | Second-best score among $2N$ actions with the mate excluded |
 | Dihedral | Refers to the dihedral group $D_N$ (rotations/reflections over $N$ points) |
 | Mate | The paired action $(\!-s, \neg r)$ excluded from runner-up |
+
+Analogy: dihedral action ~ Galois action
+
+- The dihedral group $D_N$ acts on index positions of $(M_N,T_N)$ by rotations/reflections, like a Galois group acts on roots by permutations.
+- The “locked” winner is an invariantly distinguished action under small perturbations (argmax stability), analogous to a Galois-stable feature (e.g., a root selected by a discriminant gap).
+- Mate exclusion mirrors pairing under conjugation: $(s,r)$ and its mate $(\!-s,\neg r)$ form a two-element orbit like complex conjugates.
+- Two-scale lift $(s,r)\mapsto(2s{+}c,r)$ plays the role of compatibility across extensions (refining resolution $N\to2N$ analogous to field extension), preserving the action’s character.
 
 ## License
 MIT unless noted otherwise.
