@@ -107,16 +107,7 @@ CE1{
 
 ### How to read the CE1 summary
 
-- total: number of points tested in the window around the listed zeros.
-- online_locked: how many on the critical line (σ=1/2) achieved gap ≥ γ.
-- online_ratio: online_locked / total. A successful run has online_ratio ≈ 1.0.
-
-Defaults used here: depth=4 (N=17), γ=3, d=0.05, window=0.5, step=0.1.
-
-### Zeros and parameters
-
-Zeros
-- The values listed in `zeros=[…]` are the imaginary parts of known nontrivial zeros of ζ on the critical line (e.g., 14.134725…). We center a small window in t around each zero to test behavior on σ=1/2 and compare to σ=1/2+d.
+The values listed in `zeros=[…]` are the imaginary parts of known nontrivial zeros of ζ on the critical line (e.g., 14.134725…). We center a small window in t around each zero to test behavior on σ=1/2 and compare to σ=1/2+d.
 
 Parameters
 
@@ -128,6 +119,22 @@ Parameters
 | d | Offset used for off-line comparison (σ = 1/2 + d) |
 | window | Half-width of t-window around each listed zero |
 | step | Increment for the t-sweep within the window |
+
+Glossary
+
+| Term | Meaning |
+| --- | --- |
+| σ (sigma) | Real part of s = σ + it; critical line is σ = 1/2 |
+| t | Imaginary part of s; we sweep a window in t around each zero |
+| K_N | Even smoothing kernel (Pascal/binomial–based), normalized |
+| E_N | Smoothed drift: $E_N(\sigma,t) = (\partial_\sigma \log|\xi| * K_N)(\sigma,t)$ |
+| Φ | Map from $E_N$ to binary mask/template $(M_N,T_N)$ (Lipschitz) |
+| G_N | Dihedral integer gap (winner minus runner-up, mate excluded) |
+| γ (gamma) | Gap threshold; lock if $G_N \ge \gamma$ |
+| λ (lambda) | Integer scaling $2^q$ for the integer sandwich |
+| W_± | Integer majorant/minorant around $\lambda K_N$ with equal mass |
+| (s,r) | Dihedral action: shift s and reflection flag r ∈ {False, True} |
+| mate | The paired action $(\!-s, \neg r)$ excluded from runner-up |
 
 ## License
 MIT unless noted otherwise.
