@@ -28,39 +28,59 @@ This writes a TOML file under `.out/certs/` with on-line/off-line lock rates. CI
 
 ## Proof anchors (accepted theorems → our construction)
 
-- Explicit formula (Weil/Guinand–Weil): connects zeros/prime sums to test-function transforms. Our `GyroscopeLoss` uses a smoothed linear functional of ∂σ log|ξ|; with an admissible even kernel `K_N`, this fits the explicit-formula framework.
-- Beurling–Selberg extremal majorants/minorants: integer sandwich mirrors constructing discrete majorant/minorant around a target even kernel. Our `IntegerSandwich.kernel_sandwich` is an L1-mass–preserving discretization toward extremal pairs.
-- Paley–Wiener / Poisson summation (bandlimited smoothing): Pascal (binomial) kernels are compactly supported discrete smoothers; their continuous analogs yield controlled tails and moment cancellations. We exploit first-moment cancellation on σ=1/2 and second-moment dominance off-line.
-- Large sieve–type inequalities: dihedral correlation energy bounds with weights relate to weighted autocorrelations; provide A_N-type lower bounds and ε_N tails under mild smoothness.
-- Stability of argmax under Lipschitz perturbations: if the winning action’s margin exceeds γ and perturbations are ≤ ε < γ/2, the argmax is stable. This underpins the certification when mapping analytical contrast → integer gaps.
+We align with standard tools: explicit formula (Weil/Guinand–Weil), Beurling–Selberg extremals, Paley–Wiener/Poisson summation, large-sieve–type bounds, and argmax stability under Lipschitz perturbations. The detailed algebra sits below in a formal style.
 
-How it ties together:
-1) Smooth drift: E_N(σ,t) = (∂σ log|ξ| · K_N)(σ,t). On σ=1/2, oddness + even K_N ⇒ first moment cancels, |E_N| ≤ ε_N. Off σ=1/2±d, Taylor + second moment ⇒ |E_N| ≥ c_N d − ε_N.
-2) Integer sandwich: discretize λK_N into W_± with equal mass and monotone fixes; map |E_N| contrast to mask/template contrast. Extremal logic gives linear-in-contrast correlation separation.
-3) Dihedral gap: weighted dihedral correlation + sandwich exact scoring ⇒ integer margin gap ≥ A_N d − ε′_N. Choose N,γ,d so margin ≥ γ on-line and < γ off-line, uniformly on the window.
+## Formal presentation
 
-## Formal grammar (precise definitions and theorem template)
+Definition (kernel).
+Let K_N: \(\mathbb{R}\to\mathbb{R}\) be even, supported on \([{-}\Delta,\Delta]\), with
+\[ \int_{\mathbb{R}} K_N(u)\,du = 1,\qquad \mu_2(K_N) = \int u^2 K_N(u)\,du < \infty. \]
+Discrete K_N uses the normalized Pascal row of length \(N=2^{\text{depth}}+1\).
 
-Definitions
-- Kernel: Fix an even kernel K_N: ℝ → ℝ with support in [−Δ, Δ], normalized so ∫K_N = 1 and second moment μ₂(K_N) exists. Discrete version uses Pascal row of length 2^depth+1, normalized.
-- Smoothed drift: For σ ∈ ℝ, t ∈ ℝ, define E_N(σ,t) = (∂_σ log|ξ| * K_N)(σ,t), convolution in t with the even kernel lifted to the (σ,t) chart.
-- Integer lift: Let λ = 2^q (q∈ℕ). Define W_± ∈ ℕ^N such that W_- ≤ λK_N ≤ W_+ (componentwise) and ∑W_- = ∑W_+ = λ. (Integer sandwich.)
-- Mask/template map Φ: Given E := E_N(σ,t), define (M_N, T_N) = Φ(E) ∈ {0,1}^N × {0,1}^N by a rule monotone in |E| and odd in sign(E) (e.g., block size and cyclic shift proportional to |E| and sign(E)). Φ is Lipschitz in E in the Hamming metric up to scale c_Φ/N.
-- Dihedral gap: For A = 2M_N−1, V = 2T_N−1, define rotation/reflection scores S_rot[s] = ⟨A, V∘τ_s⟩, S_ref[s] = ⟨A, (V^R)∘τ_s⟩, gap G_N = max(S) − second_max(S), S over 2N actions (mate excluded for runner-up).
-- Mate exclusion: The mate of (s,r) is (−s, ¬r). Uniqueness excludes the mate from the runner-up.
+Definition (smoothed drift).
+For \(\sigma,t\in\mathbb{R}\), set
+\[ E_N(\sigma,t) \;=\; (\partial_\sigma \log\lvert \xi\rvert * K_N)(\sigma,t) 
+   \,=\, \int_{\mathbb{R}} \partial_\sigma \log\lvert \xi(\sigma,t-u)\rvert\, K_N(u)\,du. \]
 
-Lemmas (targets)
-1) First-moment cancellation: For even K_N and odd ∂_σ log|ξ|(1/2,·) in the window, |E_N(1/2,t)| ≤ ε_N uniformly on W_t, with ε_N → 0 as N grows (or Δ shrinks).
-2) Off-line linear growth: For σ = 1/2 ± d with small d, |E_N(σ,t)| ≥ c_N d − ε_N uniformly on W_t, with c_N ≈ μ₂(K_N)^{1/2} and ε_N as above.
-3) Integer correlation separation: For (M_N,T_N) = Φ(E), there exists A_N > 0 and δ_N ≥ 0 such that G_N ≥ A_N·|E| − δ_N; typically A_N scales like λ/√N for this sandwich.
-4) Stability (Lipschitz/argmax): If |E_off| − |E_on| ≥ ΔE and A_N·ΔE − 2δ_N ≥ γ, then the winning action is stable and G_N ≥ γ.
-5) Two-scale consistency: Winners at N and 2N satisfy lift (2s+c, r) with preserved reflection r and c ∈ {0,1}; mates map accordingly.
+Definition (integer sandwich).
+Fix \(\lambda=2^q\). Choose \(W_\pm\in\mathbb{N}^N\) with
+\[ W_- \le \lambda K_N \le W_+, \qquad \sum_i W_-^{(i)} = \sum_i W_+^{(i)} = \lambda. \]
 
-Theorem (certificate without sampling; template)
-Fix N, γ, d, and a t-window W_t. Suppose Lemmas 1–4 hold with constants (ε_N, c_N, A_N, δ_N). If A_N (c_N d − 2ε_N) − 2δ_N ≥ γ and A_N ε_N + δ_N < γ, then for all t ∈ W_t:
-- On-line: G_N(1/2,t) ≥ γ (locks)
-- Off-line: G_N(1/2±d,t) < γ (fails)
-Hence the “succeeds-on / fails-off” certificate holds uniformly on W_t. Lemma 5 yields uniqueness/robustness across N and excludes mate ambiguity.
+Definition (mask/template map).
+Let \((M_N,T_N)=\Phi(E_N)\in\{0,1\}^N\times\{0,1\}^N\) be monotone in \(|E_N|\) and odd in \(\operatorname{sign}(E_N)\). Assume a Lipschitz property: for nearby drifts \(E,E'\),
+\[ d_\mathrm{H}\big(\Phi(E),\Phi(E')\big) \;\le\; \tfrac{c_\Phi}{N}\,\lVert E-E'\rVert, \]
+where \(d_\mathrm{H}\) is Hamming distance.
+
+Definition (dihedral gap).
+Let \(A=2M_N{-}1\), \(V=2T_N{-}1\). For shift \(s\),
+\[ S_\mathrm{rot}[s]=\langle A, V\circ\tau_s\rangle,\qquad S_\mathrm{ref}[s]=\langle A, (V^R)\circ\tau_s\rangle. \]
+With mate excluded, the gap is
+\[ G_N\;=\; \max S\; -\; \operatorname{second\_max} S. \]
+
+Lemma (first-moment cancellation).
+On \(\sigma=\tfrac12\), with even \(K_N\) and odd \(\partial_\sigma\log|\xi|\) in the window \(W_t\), there exists \(\varepsilon_N\to0\) with
+\[ \sup_{t\in W_t} \big\lvert E_N(\tfrac12,t) \big\rvert \;\le\; \varepsilon_N. \]
+
+Lemma (off-line linear growth).
+For \(\sigma=\tfrac12\pm d\) and small \(d>0\), there exists \(c_N>0\) and \(\varepsilon_N\) such that
+\[ \inf_{t\in W_t} \big\lvert E_N(\tfrac12\pm d, t) \big\rvert \;\ge\; c_N\, d\; -\; \varepsilon_N. \]
+
+Lemma (integer correlation separation).
+For \((M_N,T_N)=\Phi(E)\), there exist \(A_N>0\), \(\delta_N\ge0\) with
+\[ G_N \;\ge\; A_N\,\lvert E\rvert \; -\; \delta_N, \qquad A_N \asymp \frac{\lambda}{\sqrt{N}}. \]
+
+Lemma (stability of argmax).
+If \(|E_\mathrm{off}|-|E_\mathrm{on}|\ge \Delta E\) and \(A_N\,\Delta E - 2\delta_N \ge \gamma\), then the winner is stable and \(G_N\ge\gamma\).
+
+Lemma (two-scale consistency).
+Winners at \(N\) and \(2N\) obey \((s,r)\mapsto(2s{+}c, r)\) with \(c\in\{0,1\}\); mates map accordingly.
+
+Theorem (uniform “succeeds-on / fails-off” certificate).
+Fix \(N,\gamma,d\) and a window \(W_t\). If the lemmas hold with constants \((\varepsilon_N,c_N,A_N,\delta_N)\) and
+\[ A_N\,(c_N d - 2\varepsilon_N) - 2\delta_N \;\ge\; \gamma,\qquad A_N\,\varepsilon_N + \delta_N \;<\; \gamma, \]
+then for all \(t\in W_t\),
+\[ G_N(\tfrac12,t)\;\ge\;\gamma,\qquad G_N(\tfrac12\pm d, t)\;<\;\gamma. \]
+Thus the certificate holds uniformly; two-scale consistency yields uniqueness and robustness.
 
 ### Latest generated certification (example)
 
