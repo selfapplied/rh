@@ -46,5 +46,18 @@ online_locked = 33
 offline_locked = 0
 ```
 
+### What the numbers mean (plain language)
+
+- On-line: we test points on the critical line (σ = 1/2) over a small window in t. Locked means the integer sandwich gap ≥ γ using the Metanion–Pascal phaselock. A good certificate has a high on-line locked rate (near 100%).
+- Off-line: we test points slightly off the line (σ = 1/2 + d) over the same window. A good certificate has a low off-line locked rate (near 0%).
+
+Parameters at defaults:
+- depth=4 → N = 2^depth + 1 = 17 (resolution)
+- γ=3 → required integer gap to count as locked
+- d=0.05 → how far off the line we test
+- window, step → size and granularity of the t-sweep around zeros
+
+In short: the certificate succeeds if it locks on the line and fails off the line across the window.
+
 ## License
 MIT unless noted otherwise.
