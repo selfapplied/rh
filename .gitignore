@@ -70,3 +70,4 @@ dmypy.json
 # Editors
 .vscode/
 .idea/
+.out/
