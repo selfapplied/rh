@@ -147,7 +147,7 @@ Analogy: dihedral action ~ Galois action
 
 Analogy: a solar-system picture for the mate cancellation
 
-- Think of the mask/template as a ring of $N$ observation posts around the Sun. A dihedral action either rotates the ring (day–night cycle) or reflects it (flipping east–west).
+- Think of the mask/template as a ring of $N$ planets orbiting the Sun. A dihedral action either rotates the ring (day–night cycle) or reflects it (flipping east–west).
 - The pair $(s,r)$ and its mate $(\!-s,\neg r)$ are like observing the same alignment at sunrise vs. sunset. On perfect balance (the critical line), sunrise and sunset views cancel first-order effects: equal-and-opposite tilt → zero net drift. Off the line, the tilt is asymmetric, so the second-order effect (area/solid angle) survives and grows.
 - The certificate measures which alignment wins by a margin. Mate exclusion says we don’t count the sunset view as a rival to sunrise—those two are the same alignment seen from opposite sides. What remains is the true runner-up among genuinely different alignments.
 
