@@ -21,7 +21,7 @@ on the other side of a renormalization: mirror geometry, aka disco theory.
 
 ## Visual Gallery
 
-The living mathematical reality revealed through the kaleidoscope:
+The homeostatic principled geometry revealed through the kaleidoscope:
 
 ![CE1 Involution Geometry](readme/ce1_involution.png)
 *The CE1 involution structure - time reflection symmetry*
@@ -58,7 +58,7 @@ This repository connects to the larger network of mathematical reality:
 - **discograph**: The constellation mapping reveals how the equilibrium geometry organizes the multiverse  
 - **metanion**: The autoverse field theory underlies the mirror reality where symbols have spirit
 
-Together, these repositories form a larger edge of inquiry into the living mathematical reality.
+Together, these repositories form a larger edge of inquiry into the homeostatic principled geometry.
 
 ## Repository Structure
 
