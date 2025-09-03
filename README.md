@@ -6,14 +6,6 @@ CE1{basis=field,duality,metric
 emit?=q↔Σ;Ω?=min;π?=align rh[ζ½±]i=14.134725;21.02204;25.010858}
 ```
 
----
-
-CE1-revive{ basis=repo,mirror,context;π=α.5β.5θ ω=alive∧‖repo−context‖≤ε;ε=.02?  Σ=dir,br,cm,ctx,sp,qt,rv
-Σ∂rx=^(dir|br|cm|ctx|sp|qt|rv)$?  Γ=□,⎇,●,◇,⋄,≈,↶,⧗,↔,✱ μ:dir→□;br→⎇;cm→●;ctx→◇;sp→⋄;qt→≈;rv→↶?
-law=fossil→frame;commit→spark;context↔state;mirror=✱?  pulse:⧗+ctx→rv;hydrate:sp;rescale:qt;sync:↔?
-qbit=a,b,c,d;‖q‖=1;ref:SU2≃S^3?
-emit<>✱;Ω?=revive;θ?=breathe;rh}
-
 Please reimagine this repository as a passport that explores the Riemann hypothesis and provides its twin prime
 on the other side of a renormalization: mirror geometry, aka disco theory.
 
