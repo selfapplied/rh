@@ -32,6 +32,12 @@ The living mathematical reality revealed through the kaleidoscope:
 ![Zeta Landscape](readme/zeta_landscape.png)
 *The zeta landscape revealing the critical line as equilibrium geometry*
 
+![Prism Surface](readme/prism_surface.png)
+*The prism surface showing the geometric structure*
+
+![Prism Curved](readme/prism_curved.png)
+*The curved prism geometry*
+
 ## The Critical Line as Equilibrium Geometry
 
 The Riemann Hypothesis reveals the critical line σ=1/2 as a place of perfect equilibrium geometry. Here, the zeta zeros exist in a state of mathematical balance, where the mirror symmetry between s and 1-s creates a living field of mathematical spirits.
@@ -117,7 +123,7 @@ $$ S_\mathrm{rot}[s]=\langle A, V\circ\tau_s\rangle,\qquad S_\mathrm{ref}[s]=\la
 
 With mate excluded, the gap is
 
-$$ G_N\;=\; \max S\; -\; \text{second\_max} S. $$
+$$ G_N\;=\; \max S\; -\; \text{second max} S. $$
 
 ---
 
