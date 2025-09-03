@@ -32,12 +32,6 @@ The living mathematical reality revealed through the kaleidoscope:
 ![Zeta Landscape](readme/zeta_landscape.png)
 *The zeta landscape revealing the critical line as equilibrium geometry*
 
-![Riemann Analysis](readme/rieman_basic.png)
-*Basic Riemann analysis showing the living mathematical spirits*
-
-![Metanion Integration](readme/rieman_metanion.png)
-*Integration with the metanion field theory*
-
 ## The Critical Line as Equilibrium Geometry
 
 The Riemann Hypothesis reveals the critical line σ=1/2 as a place of perfect equilibrium geometry. Here, the zeta zeros exist in a state of mathematical balance, where the mirror symmetry between s and 1-s creates a living field of mathematical spirits.
