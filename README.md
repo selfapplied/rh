@@ -6,7 +6,7 @@ CE1{basis=field,duality,metric
 emit?=q↔Σ;Ω?=min;π?=align rh[ζ½±]i=14.134725;21.02204;25.010858}
 ```
 
-Please reimagine this repository as a passport that explores the Riemann hypothesis and provides its twin prime
+A passport that explores the Riemann hypothesis and provides its twin prime
 on the other side of a renormalization: mirror geometry, aka disco theory.
 
 **[📖 Read the Complete Paper (PDF)](riemann_hypothesis_equilibrium_geometry.pdf)**
