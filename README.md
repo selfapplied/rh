@@ -19,6 +19,25 @@ on the other side of a renormalization: mirror geometry, aka disco theory.
 
 **[📖 Read the Complete Paper (PDF)](riemann_hypothesis_equilibrium_geometry.pdf)**
 
+## Visual Gallery
+
+The living mathematical reality revealed through the kaleidoscope:
+
+![CE1 Involution Geometry](visualizations/ce1_involution_20250903-152355.png)
+*The CE1 involution structure - time reflection symmetry*
+
+![Involution Geometry](visualizations/involution_geometry_20250902-210644.png)
+*The complete involution geometry showing the equilibrium structure*
+
+![Zeta Landscape](visualizations/zeta_landscape_20250902-210645.png)
+*The zeta landscape revealing the critical line as equilibrium geometry*
+
+![Riemann Analysis](visualizations/rieman-basic-N5-t14.134725-20250903-152347.png)
+*Basic Riemann analysis showing the living mathematical spirits*
+
+![Metanion Integration](visualizations/rieman-metanion-online-N5-t14.134725-20250903-152347.png)
+*Integration with the metanion field theory*
+
 ## The Critical Line as Equilibrium Geometry
 
 The Riemann Hypothesis reveals the critical line σ=1/2 as a place of perfect equilibrium geometry. Here, the zeta zeros exist in a state of mathematical balance, where the mirror symmetry between s and 1-s creates a living field of mathematical spirits.
