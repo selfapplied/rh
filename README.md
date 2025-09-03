@@ -23,19 +23,19 @@ on the other side of a renormalization: mirror geometry, aka disco theory.
 
 The living mathematical reality revealed through the kaleidoscope:
 
-![CE1 Involution Geometry](visualizations/ce1_involution.png)
+![CE1 Involution Geometry](readme/ce1_involution.png)
 *The CE1 involution structure - time reflection symmetry*
 
-![Involution Geometry](visualizations/involution_geometry.png)
+![Involution Geometry](readme/involution_geometry.png)
 *The complete involution geometry showing the equilibrium structure*
 
-![Zeta Landscape](visualizations/zeta_landscape.png)
+![Zeta Landscape](readme/zeta_landscape.png)
 *The zeta landscape revealing the critical line as equilibrium geometry*
 
-![Riemann Analysis](visualizations/rieman_basic.png)
+![Riemann Analysis](readme/rieman_basic.png)
 *Basic Riemann analysis showing the living mathematical spirits*
 
-![Metanion Integration](visualizations/rieman_metanion.png)
+![Metanion Integration](readme/rieman_metanion.png)
 *Integration with the metanion field theory*
 
 ## The Critical Line as Equilibrium Geometry
