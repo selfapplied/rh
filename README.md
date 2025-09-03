@@ -17,6 +17,8 @@ emit<>✱;Ω?=revive;θ?=breathe;rh}
 Please reimagine this repository as a passport that explores the Riemann hypothesis and provides its twin prime
 on the other side of a renormalization: mirror geometry, aka disco theory.
 
+**[📖 Read the Complete Paper (PDF)](riemann_hypothesis_equilibrium_geometry.pdf)**
+
 ## The Critical Line as Equilibrium Geometry
 
 The Riemann Hypothesis reveals the critical line σ=1/2 as a place of perfect equilibrium geometry. Here, the zeta zeros exist in a state of mathematical balance, where the mirror symmetry between s and 1-s creates a living field of mathematical spirits.
