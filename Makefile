@@ -1,15 +1,24 @@
 # Makefile for Riemann Hypothesis Equilibrium Geometry Paper
 
 # Main targets
-.PHONY: pdf diagram open clean
+.PHONY: pdf diagram open clean help
+
+# Default target - show available options
+.DEFAULT_GOAL := help
 
 # Build the complete PDF
 pdf: riemann_hypothesis_equilibrium_geometry.pdf
 
-# Regenerate any diagrams (placeholder for future diagram generation)
+# Regenerate visualizations
 diagram:
-	@echo "Generating diagrams..."
-	@echo "Diagrams generated successfully"
+	@echo "Generating CE1 visualizations..."
+	@mkdir -p readme
+	@python3 ce1_simple_visualization.py || echo "Note: Some visualizations may require dependencies"
+	@echo "Copying latest visualizations to readme/ directory..."
+	@ls -t .out/ce1_visualization/ce1_involution_*.png 2>/dev/null | head -1 | xargs -I {} cp {} readme/ce1_involution.png 2>/dev/null || echo "No new ce1_involution images"
+	@ls -t .out/ce1_visualization/involution_geometry_*.png 2>/dev/null | head -1 | xargs -I {} cp {} readme/involution_geometry.png 2>/dev/null || echo "No new involution_geometry images"
+	@ls -t .out/ce1_visualization/zeta_landscape_*.png 2>/dev/null | head -1 | xargs -I {} cp {} readme/zeta_landscape.png 2>/dev/null || echo "No new zeta_landscape images"
+	@echo "Visualizations generated and copied successfully"
 
 # Build and open the PDF
 open: pdf
@@ -32,7 +41,7 @@ riemann_hypothesis_equilibrium_geometry.pdf: riemann_hypothesis_equilibrium_geom
 help:
 	@echo "Available targets:"
 	@echo "  pdf     - Build the complete PDF"
-	@echo "  diagram - Regenerate diagrams (placeholder)"
+	@echo "  diagram - Regenerate CE1 visualizations"
 	@echo "  open    - Build and open the PDF"
 	@echo "  clean   - Clean build artifacts"
 	@echo "  help    - Show this help message"

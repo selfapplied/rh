@@ -1,0 +1,80 @@
+# Layout v1.0: Golden-Spring Perfect Core
+# Frozen layout specification with φ-based geometry
+
+version: "1.0"
+frozen: true
+description: "Golden ratio layout with spring physics"
+
+# Canonical Constants (hardcoded)
+constants:
+  phi: 1.61803398875
+  default_height: 1000
+  
+# Canvas Geometry
+canvas:
+  width_formula: "(1 + φ) * H"
+  height: "H"
+  aspect_ratio: "φ"
+  
+# Panel Layout
+panels:
+  left_square:
+    name: "GL"
+    width: "H"
+    height: "H" 
+    purpose: "8-stage CE1 glyph"
+    
+  right_panel:
+    name: "RR"
+    width: "φ * H"
+    height: "H"
+    purpose: "text ledger"
+    
+    subdivisions:
+      header:
+        height_percent: 15
+        purpose: "immutable header"
+        clickable: false
+        
+      body:
+        height_percent: 85
+        purpose: "merged clickable body"
+        clickable: true
+
+# Golden-Spring Physics
+spring_physics:
+  rest_lengths:
+    header_body_ratio: 0.15  # 15% header, 85% body
+    left_right_ratio: "1/φ"  # Left:Right = 1:φ
+    
+  energy_tolerance: 0.001
+  max_iterations: 100
+  
+  spring_constants:
+    layout_spring: 1.0
+    aspect_spring: 2.0  # Stronger for golden ratio preservation
+    
+# Layout Deltas (recorded in anchor)
+delta_tracking:
+  record_in_va: true
+  tolerance: 0.001
+  components:
+    - "header_height_delta"
+    - "body_height_delta" 
+    - "left_width_delta"
+    - "right_width_delta"
+    - "total_energy"
+
+# Anchor Hash Components
+anchor_components:
+  VA: "H(NF_sig, layout_rest, layout_delta, palette_id)"
+  MA: "H(P, G, Σ, stamp_metrics)"
+  LA: "H(VA || MA || provenance{ts, commit, impl, params})"
+  AX: "bech32(VA ⊕ MA ⊕ LA)"
+
+# Validation Requirements
+validation:
+  golden_ratio_tolerance: 0.001
+  spring_energy_max: 0.001
+  delta_recording_required: true
+  ax_deterministic: true
