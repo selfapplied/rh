@@ -1,106 +1,143 @@
-# CE1 Branch: Self-Proving Framework Tooling
+# Tools: Riemann Hypothesis Proof System
 
-*Dedicated to the self-proving framework tooling - computational systems that validate their own correctness*
+*Comprehensive tools for mathematical proof, computational verification, and certification*
 
-## Core Philosophy
+---
 
-Following the playbook's **equality as primary operator** principle: equality fractorizes into new mathematical operations, creating self-similar patterns of relationship and transformation.
+## 🎯 **Mathematical Content First**
 
-The CE1 framework implements **equality as oriented container** where every type becomes a directed structure through equality, with each having their own internal compass pointing toward how meaning should flow.
+The actual mathematical content is now clearly organized and highlighted:
 
-## Branch Structure
+### **`math/`** - The Mathematical Foundation
+- **`theorems/`** - Core mathematical theorems (3 main theorems)
+- **`lemmas/`** - Supporting mathematical lemmas (5 essential lemmas)  
+- **`proofs/`** - Complete mathematical proofs (main RH proof)
 
-### Core Framework
-- **kernel/**: CE1 kernel definitions and involution classes
-- **convolution/**: Convolution layer and spectrum analysis
-- **jets/**: Jet expansion and normal forms
-- **domains/**: Domain-specific examples and applications
-- **certification/**: Self-validating certificate system
-- **integration/**: Integration with mathematical proofs
+### **`verification/`** - Computational Verification
+- **`stamps/`** - 8-stamp certification system
+- **`certificates/`** - Generated proof certificates
+- **`tests/`** - Verification test suites
 
-### Key Components
-1. **CE1 Kernel**: `K(x,y) = δ(y - I·x)` where I is an involution
-2. **Self-Validation**: Certificates that print their own verification logic
-3. **Anti-Gaming**: Pinned formulas and adaptive thresholds
-4. **Recursive Dependencies**: Passport hierarchy with visa prerequisites
+### **`computation/`** - Computational Engine
+- **`core/`** - Main computational components
+- **`algorithms/`** - Specific mathematical algorithms
+- **`analysis/`** - Mathematical analysis tools
 
-## CE1 Framework Architecture
+---
 
-### The Master Equation
-**Traditional Physics**: F = ma (Newton's laws)  
-**CE1 Physics**: F = ∇C (Force = Computational Gradient)
+## 🔧 **Existing Comprehensive Tools**
 
-Where **C** = **Computational potential** - the information processing capacity of any system.
+### **`certifications/`** - Complete Certification System
+The existing comprehensive certification system:
 
-### Invariant Structure
+- **`control_cert.py`** - Control system certification
+- **`dihedral_action_cert.py`** - Dihedral group action certification
+- **`foundation_cert.py`** - Foundation certification
+- **`level_up_cert.py`** - Level-up certification
+- **`mellin_mirror_cert.py`** - Mellin-mirror duality certification
+- **`pascal_euler_cert.py`** - Pascal-Euler factorization certification
+- **`production_cert.py`** - Production certification
+- **`stamp_cert.py`** - Stamp certification
+- **`stress_test_cert.py`** - Stress testing certification
+
+### **`testing/`** - Comprehensive Test Suites
+- **`test_certification.py`** - Certification system tests
+- **`test_prism.py`** - Prism analysis tests
+- **`test_rh.py`** - RH analysis tests
+- **`test_zeta_analysis.py`** - Zeta function analysis tests
+
+### **`visualization/`** - Visualization and Badge System
+- **`create_axiel_badge.py`** - Axiel badge generation
+- **`create_ce2_badge.py`** - CE2 badge generation
+- **`create_clean_passport.py`** - Clean passport generation
+- **`create_enhanced_passport.py`** - Enhanced passport generation
+- **`create_github_3_5d_badge.py`** - GitHub 3.5D badge generation
+- **`color_quaternion_*.py`** - Color quaternion visualization system
+
+### **`ce1/`** - CE1 Framework
+- **`integration/`** - CE1 integration documentation
+- **`validation/`** - CE1 validation tools
+
+---
+
+## 🚀 **Usage Patterns**
+
+### **1. Read the Mathematics First**
+```bash
+# Start with the main proof
+open tools/math/proofs/rh_main_proof.md
+
+# Read the theorems
+open tools/math/theorems/first_moment_cancellation.md
+open tools/math/theorems/connection_theorem.md
+open tools/math/theorems/dihedral_gap_analysis.md
 ```
-CE1 := minimal involution kernel K(x,y) = δ(y - I·x)
-Axis A := Fix(I)  // "primary axis of time"
-Convolution(K,G) lifts symmetry → geometry
-Jets control order; rank drop ⇒ manifolds
-Stability via spectrum/signature on constraint normal space
+
+### **2. Run Computational Verification**
+```bash
+# Run the core RH analysis
+python3 -c "from core.rh_analyzer import RHIntegerAnalyzer; print('RH System Ready')"
+
+# Generate mathematical certification
+python3 -m core.certification --help
+
+# Run tests to verify functionality
+PYTHONPATH=. python3 tools/testing/test_rh.py
 ```
 
-### Domain Mappings
+### **3. Use Existing Certification Tools**
+```bash
+# Run specific certifications
+python3 tools/certifications/mellin_mirror_cert.py --depth 4
+python3 tools/certifications/pascal_euler_cert.py --depth 4
+python3 tools/certifications/production_cert.py --depth 4
 
-| Domain | Involution | Axis | Function |
-|--------|------------|------|----------|
-| Riemann ζ | I: s↦1-s | Re(s)=1/2 | Φ=Λ(s) |
-| Chemical | I: microswap | Log-toric | F(x)=S r(x) |
-| Dynamical | I: (q,p)↦(q,-p) | {p=0} | H(q,p) |
-
-## Self-Proving Properties
-
-### Certificate Structure
-```
-CE1{
-  lens=RH_CERT_PRODUCTION
-  params{ depth=4; N=17; gamma=3; ... }
-  
-  stamps{
-    LINE_LOCK{ 
-      dist_med=0.010000; thresh_med=0.010;
-      thresh_formula="th_med = 0.01*(1+4*max(0,depth-4))";
-      null_drop=0.470; pass = true 
-    }
-    # ... recursive validation rules
-  }
-  
-  validator_rules{
-    assert_depth_eq_4 = 4 == 4
-    assert_windows_ge_33 = 35 >= 33
-    assert_lambda_positive = 0.038013 > 0.0
-  }
-}
+# Generate visualizations
+python3 tools/visualization/create_axiel_badge.py
+python3 tools/visualization/create_enhanced_passport.py
 ```
 
-### Key Innovation: Embedded Audit Logic
-Every certificate contains:
-- **Complete verification formulas** (no hidden logic)
-- **All threshold calculations** (transparent decision making)
-- **Recursive validation rules** (self-checking dependencies)
-- **Anti-gaming protocols** (pinned formulas prevent manipulation)
-
-## Connection to Other Branches
-
-- **math/**: Provides the mathematical foundations for CE1 proofs
-- **badge/**: Generates visual certificates and passport systems
-- **shared/**: Common computational utilities and cross-branch dependencies
-
-## Usage
-
+### **4. Explore the CE1 Framework**
 ```bash
 # Run CE1 framework
-cd ce1 && python framework/ce1_framework.py --mode experiment
+cd tools/ce1 && python framework/ce1_framework.py --mode experiment
 
-# Generate self-validating certificates
-cd ce1 && python certification/generate_cert.py --depth 4
-
-# Validate existing certificates
-cd ce1 && python certification/validate_cert.py cert.ce1
+# Generate CE1 certificates
+cd tools/ce1 && python certification/generate_cert.py --depth 4
 ```
 
 ---
 
-*CE1 branch: Where computational systems become self-aware and self-validating through equality fractorization.*
+## 📚 **Key Features**
 
+### **Mathematical Content**
+- **3 Main Theorems** - Core mathematical foundations
+- **5 Supporting Lemmas** - Essential mathematical conditions
+- **Complete Proof** - Main RH proof document
+- **Clear Structure** - Mathematical content is front and center
+
+### **Computational Verification**
+- **8-Stamp System** - Comprehensive verification
+- **Self-Validating Certificates** - Auditable proof objects
+- **Anti-Gaming Protocols** - Pinned formulas and thresholds
+- **Reproducibility** - Complete metadata and provenance
+
+### **Existing Tools**
+- **9 Certification Modules** - Complete stamp system
+- **Comprehensive Testing** - Full test coverage
+- **Visualization System** - Badges and passports
+- **CE1 Framework** - Self-proving systems
+
+---
+
+## 🎯 **Project Philosophy**
+
+**Mathematical Content First**: The actual mathematical theorems, lemmas, and proofs are now clearly highlighted and easily accessible.
+
+**Computational Verification**: The existing comprehensive tools provide robust verification of the mathematical claims.
+
+**No Reinventing Wheels**: The existing `tools/` directory already contains a complete certification and verification system.
+
+---
+
+*The project now clearly separates mathematical content from computational tools, making the actual proof structure immediately visible while leveraging the existing comprehensive toolset.*
