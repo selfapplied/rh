@@ -19,7 +19,7 @@ We have developed a **complete mathematical proof** of the Riemann Hypothesis co
 
 ## 📚 **Project Structure: Mathematical Content First**
 
-### **`tools/math/`** - The Mathematical Foundation
+### **`math/`** - The Mathematical Foundation
 The actual mathematical content - theorems, lemmas, and proofs:
 
 - **`theorems/`** - Core mathematical theorems
@@ -36,26 +36,15 @@ The actual mathematical content - theorems, lemmas, and proofs:
 - **`proofs/`** - Complete mathematical proofs
   - `rh_main_proof.md` - Main RH proof using all components
 
-### **`tools/verification/`** - Computational Verification
-The computational tools that verify the mathematical claims:
+### **`tools/`** - Computational Tools
+All computational tools and verification systems:
 
-- **`stamps/`** - 8-stamp certification system
-- **`certificates/`** - Generated proof certificates
-- **`tests/`** - Verification test suites
-
-### **`tools/computation/`** - Computational Engine
-Core algorithms and analysis tools:
-
-- **`core/`** - Main computational components
-- **`algorithms/`** - Specific mathematical algorithms
-- **`analysis/`** - Mathematical analysis tools
-
-### **`tools/certifications/`** - Existing Certification Tools
-The comprehensive certification system already in place:
-
-- **9 certification modules** - Complete stamp system
-- **Testing framework** - Comprehensive test suites
-- **Visualization tools** - Badge and passport generation
+- **`certifications/`** - Complete certification system (9 modules)
+- **`computation/`** - Computational engine and algorithms
+- **`stamps/`** - 8-stamp verification system
+- **`testing/`** - Comprehensive test suites
+- **`visualization/`** - Badge and passport generation
+- **`ce1/`** - CE1 framework and integration
 
 ### **`core/`** - Core Mathematical Engine
 The core RH framework and mathematical foundations:
@@ -94,20 +83,20 @@ The framework generates **mathematical proof certificates** with 8 validation st
 ### **1. Start with the Mathematical Proof**
 ```bash
 # Read the complete mathematical proof
-open tools/math/proofs/rh_main_proof.md
+open math/proofs/rh_main_proof.md
 
 # Read the main theorems
-open tools/math/theorems/first_moment_cancellation.md
-open tools/math/theorems/connection_theorem.md
-open tools/math/theorems/dihedral_gap_analysis.md
+open math/theorems/first_moment_cancellation.md
+open math/theorems/connection_theorem.md
+open math/theorems/dihedral_gap_analysis.md
 ```
 
 ### **2. Understand the Supporting Lemmas**
 ```bash
 # Read the supporting lemmas
-open tools/math/lemmas/li_coefficient_positivity.md
-open tools/math/lemmas/functional_equation_symmetry.md
-open tools/math/lemmas/euler_product_locality.md
+open math/lemmas/li_coefficient_positivity.md
+open math/lemmas/functional_equation_symmetry.md
+open math/lemmas/euler_product_locality.md
 ```
 
 ### **3. Explore the Computational Verification**
@@ -143,12 +132,12 @@ PYTHONPATH=. python3 tools/testing/test_rh.py
 
 ## 📖 **Reading Order**
 
-1. **Start with the mathematics**: `tools/math/proofs/rh_main_proof.md`
-2. **Read the theorems**: `tools/math/theorems/`
-3. **Review the lemmas**: `tools/math/lemmas/`
-4. **Explore the verification**: `tools/verification/`
-5. **Examine the computation**: `tools/computation/`
-6. **Use the existing tools**: `tools/certifications/`
+1. **Start with the mathematics**: `math/proofs/rh_main_proof.md`
+2. **Read the theorems**: `math/theorems/`
+3. **Review the lemmas**: `math/lemmas/`
+4. **Explore the tools**: `tools/`
+5. **Examine the core**: `core/`
+6. **Use the certifications**: `tools/certifications/`
 
 ---
 
