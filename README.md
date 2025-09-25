@@ -24,10 +24,10 @@ We have developed a **novel Pascal-Dihedral approach** for detecting Riemann Hyp
 python3 -c "from core.rh_analyzer import RHIntegerAnalyzer; print('RH System Ready')"
 
 # Generate mathematical certification
-python3 core/certification.py
+python3 -m core.certification --help
 
 # Run tests to verify functionality
-python3 tools/testing/test_rh.py
+PYTHONPATH=. python3 tools/testing/test_rh.py
 ```
 
 ---
