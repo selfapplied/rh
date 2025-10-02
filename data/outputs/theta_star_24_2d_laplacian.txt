@@ -1,0 +1,12 @@
+θ* (THETA STAR) - 24+2D LAPLACIAN METHOD
+==================================================
+
+α* = 4.7108180498
+ω* = 2.3324448344
+Eigenvalue: -0.034053800632197
+Method: 24+2D Laplacian
+Stability: unstable
+Dimension: 26
+Resolution: 8
+Critical points found: 4
+Success: True

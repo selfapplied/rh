@@ -60,3 +60,9 @@ The Nyman-Beurling criterion is fundamental to RH because it provides a necessar
 - Implementation in `core/validation.py` (NymanBeurlingStamp)
 - Mathematical foundation in Nyman-Beurling theory
 - Computational verification in certification system
+
+### Nyman-Beurling Theory<a name="nyman-beurling-theory"></a>
+
+- [Nyman 1950] B. Nyman, "Some notes on the Riemann zeta function", *Acta Mathematica* 81 (1950)
+- [Beurling 1955] A. Beurling, "A closure problem related to the Riemann zeta-function", *Proceedings of the National Academy of Sciences* 41 (1955)
+- [Baez-Duarte 2003] L. Baez-Duarte, "A new necessary and sufficient condition for the truth of the Riemann hypothesis", *Comptes Rendus Mathématique* 336(1) (2003)

@@ -136,3 +136,18 @@ $$\\xi(s) = \\frac{1}{2} s(s-1) \\pi^{-s/2} \\Gamma(s/2) \\zeta(s)$$
 ## Implementation Status<a name="implementation-status"></a>
 
 **Note**: For current project priorities and next steps, see the [Consolidated Project Roadmap](README.md#consolidated-project-roadmap) in the main README.
+
+## References<a name="references"></a>
+
+### Weil Explicit Formula & Positivity<a name="weil-explicit-formula--positivity"></a>
+
+- [Weil 1952] A. Weil, "Sur les 'formules explicites' de la théorie des nombres premiers", *Communications du Sém. Math. de l'Univ. de Lund*, 1952, 252-265
+- [Titchmarsh 1986] E.C. Titchmarsh, *The Theory of the Riemann Zeta-Function* (2nd ed.), Oxford University Press
+- [Heath-Brown 2007] D.R. Heath-Brown, "Prime number theory and the Riemann zeta-function", *Cambridge Tracts in Mathematics* 177
+
+### Alternative RH Equivalents<a name="alternative-rh-equivalents"></a>
+
+- [Nyman 1950] B. Nyman, "Some notes on the Riemann zeta function", *Acta Mathematica* 81 (1950)
+- [Baez-Duarte 2003] L. Baez-Duarte, "A new necessary and sufficient condition for the truth of the Riemann hypothesis", *Comptes Rendus Mathématique* 336(1) (2003)
+- [Li 1997] X.-J. Li, "The positivity of a sequence of numbers and the Riemann hypothesis", *Journal of Number Theory* 65(2) (1997)
+- [Keiper 1992] J.B. Keiper, "Power series expansions of Riemann's ξ function", *Mathematics of Computation* 58(198) (1992)

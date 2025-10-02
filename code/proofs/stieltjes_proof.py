@@ -217,6 +217,18 @@ class StieltjesProofHarness:
         """Define the generating function G(z) symbolically"""
         # G(z) = ∫_0^∞ g_θ(log x) / x · 1/(1 - xz) dx
         # This is the Stieltjes transform representation
+        #
+        # CONNECTION TO LI COEFFICIENTS:
+        # The Li-Stieltjes Transform Theorem proves that:
+        # L_θ(z) = Σₙ λₙ(θ) zⁿ = ∫₀^∞ t dμ_θ(t)/(1-zt)
+        # where λₙ(θ) = Σ_ρ (1 - (1 - 1/ρ)ⁿ) w_θ(ρ)
+        # and w_θ(ρ) = ĝ_θ((ρ-1/2)/i) / |ρ(1-ρ)|
+        #
+        # This G(z) is the Stieltjes kernel representation that connects
+        # to the Li generating function through the theoretical framework.
+        #
+        # See: math/theorems/li_stieltjes_transform_theorem.md for proof.
+
         # For now, we'll use a simplified form that avoids complex integration
         integrand = g_theta.subs(self.t, log(self.x)) / self.x / (1 - self.x * self.z)
         

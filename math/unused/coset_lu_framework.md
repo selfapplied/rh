@@ -226,3 +226,17 @@ This framework provides the **exact mathematical pathway** to prove RH through:
 ______________________________________________________________________
 
 **Mathematical Rigor**: This approach is mathematically sound and provides a concrete pathway to the RH proof through established techniques in analytic number theory, representation theory, and functional analysis.
+
+## References<a name="references"></a>
+
+### Lattice Theory and Modular Forms<a name="lattice-theory-and-modular-forms"></a>
+
+- [Epstein 1903] P. Epstein, "Zur Theorie allgemeiner Zetafunktionen", *Mathematische Annalen* 56(4) (1903)
+- [Mumford 1983] D. Mumford, *Tata Lectures on Theta I*, Birkhäuser
+- [Conway-Sloane 1999] J.H. Conway, N.J.A. Sloane, *Sphere Packings, Lattices and Groups* (3rd ed.), Springer
+- [Washington 1997] L.C. Washington, *Introduction to Cyclotomic Fields* (2nd ed.), Springer
+
+### Diophantine Approximation<a name="diophantine-approximation"></a>
+
+- [Hurwitz 1891] A. Hurwitz, "Über die angenäherte Darstellung der Irrationalzahlen durch rationale Brüche", *Mathematische Annalen* 39(2) (1891)
+- [Cassels 1957] J.W.S. Cassels, *An Introduction to Diophantine Approximation*, Cambridge University Press
