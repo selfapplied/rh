@@ -1,6 +1,6 @@
 # Makefile for Riemann Hypothesis Equilibrium Geometry Paper
 
-.PHONY: pdf open clean help check markdown riemann cert install fix
+.PHONY: pdf open clean help check markdown riemann cert install fix test prove
 
 # Default target - show available options
 .DEFAULT_GOAL := help

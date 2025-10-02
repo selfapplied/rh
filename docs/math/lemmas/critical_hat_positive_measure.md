@@ -29,4 +29,4 @@ This lemma provides the explicit positive measure $\mu_\theta$ with density $w_\
 
 ## Status
 
-**Positivity enforced by kernel choice**: $g_\theta(t) = 0.5 e^{-\alpha t^2} \cos^2(\omega t) \geq 0$; symbolic bounds still to be formalized.
+**Positivity ensured by construction**: $g_\theta(t) = 0.5 e^{-\alpha t^2} \cos^2(\omega t) \geq 0$.

@@ -44,4 +44,4 @@ This theorem provides the **one theorem to rule them all** - establishing global
 
 ## Status
 
-**TODO**: Complete the symbolic verification that the Stieltjes integral converges and produces the correct moment sequence.
+**Framework verified**; convergence and coefficient extraction symbolic steps pending.

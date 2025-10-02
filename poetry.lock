@@ -1316,4 +1316,4 @@ md = ["mdformat", "mdformat-frontmatter", "mdformat-gfm", "mdformat-toc"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13,<3.14"
-content-hash = "a94a906358a41524647d5cc61ab9f31db658277e35e4a74d2966661cef781413"
+content-hash = "8df4ce9dd4eb311ba80dd3ecc49c3a25ab69b4df9728d7855d4cd08e6476b718"
