@@ -1,48 +1,61 @@
-# Nyman-Beurling Completeness Lemma
+# Nyman-Beurling Completeness Lemma<a name="nyman-beurling-completeness-lemma"></a>
 
-## Statement
+<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
+
+- [Nyman-Beurling Completeness Lemma](#nyman-beurling-completeness-lemma)
+  - [Statement](#statement)
+  - [Mathematical Context](#mathematical-context)
+  - [Proof Strategy](#proof-strategy)
+  - [Implementation](#implementation)
+  - [Mathematical Insight](#mathematical-insight)
+  - [Computational Details](#computational-details)
+  - [References](#references)
+
+<!-- mdformat-toc end -->
+
+## Statement<a name="statement"></a>
 
 **Lemma (Nyman-Beurling Completeness)**: The shifted dilations of the Pascal kernel provide a complete approximation system for L²(0,1), satisfying the Nyman-Beurling criterion.
 
-## Mathematical Context
+## Mathematical Context<a name="mathematical-context"></a>
 
 This lemma establishes:
 
 1. **Completeness**: The Pascal kernel system spans L²(0,1)
-2. **Approximation quality**: How well the system approximates constant functions
-3. **Basis properties**: The kernel provides a suitable basis for analysis
-4. **L² convergence**: Uniform convergence in L² norm
+1. **Approximation quality**: How well the system approximates constant functions
+1. **Basis properties**: The kernel provides a suitable basis for analysis
+1. **L² convergence**: Uniform convergence in L² norm
 
-## Proof Strategy
+## Proof Strategy<a name="proof-strategy"></a>
 
 The proof involves:
 
 1. **Shifted dilations**: Testing the Nyman-Beurling criterion
-2. **L² approximation**: Measuring how well kernel approximates constant function 1
-3. **Basis size analysis**: Computing the effective basis dimension
-4. **Convergence verification**: Ensuring L² error decreases with depth
+1. **L² approximation**: Measuring how well kernel approximates constant function 1
+1. **Basis size analysis**: Computing the effective basis dimension
+1. **Convergence verification**: Ensuring L² error decreases with depth
 
-## Implementation
+## Implementation<a name="implementation"></a>
 
 This lemma is verified through the **NB** certification stamp, which:
 
 1. Creates Pascal kernel at given depth
-2. Tests L² approximation of constant function 1
-3. Computes L² error between kernel and target
-4. Applies gamma smoothing for numerical stability
+1. Tests L² approximation of constant function 1
+1. Computes L² error between kernel and target
+1. Applies gamma smoothing for numerical stability
 
-## Mathematical Insight
+## Mathematical Insight<a name="mathematical-insight"></a>
 
 The Nyman-Beurling criterion is fundamental to RH because it provides a necessary and sufficient condition for RH in terms of L² approximation. The Pascal kernel system satisfies this criterion.
 
-## Computational Details
+## Computational Details<a name="computational-details"></a>
 
-- **L² error**: ||kernel - 1||_L² over support
+- **L² error**: ||kernel - 1||\_L² over support
 - **Basis size**: Number of kernel weights
 - **Gamma smoothing**: exp(-γ) for numerical stability
 - **Tolerance**: L² error must be ≤ d for verification
 
-## References
+## References<a name="references"></a>
 
 - Implementation in `core/validation.py` (NymanBeurlingStamp)
 - Mathematical foundation in Nyman-Beurling theory

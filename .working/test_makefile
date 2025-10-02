@@ -1,0 +1,29 @@
+# Test Makefile with environment activation
+.PHONY: check markdown riemann
+
+# Set the Poetry Python path
+PYTHON := $(shell poetry run python -c 'import sys; print(sys.executable)')
+PYTHONPATH := .
+
+# General check system (replaces md-check and test)
+check:
+	@echo "Running comprehensive checks..."
+	$(PYTHON) -m tools.check all
+
+# Markdown utilities (renamed from md, absorbs link generation)
+markdown:
+	@echo "Running comprehensive markdown processing..."
+	$(PYTHON) -m tools.markdown convert-wikilinks .
+	$(PYTHON) -m tools.markdown toc .
+	$(PYTHON) -m tools.markdown format .
+
+# Riemann core (renamed from core)
+riemann:
+	@echo "Running riemann core..."
+	$(PYTHON) -m tools.riemann
+
+# Test the environment setup
+test-env:
+	@echo "Poetry Python: $(PYTHON)"
+	@echo "Testing check command..."
+	$(PYTHON) -m tools.check --help

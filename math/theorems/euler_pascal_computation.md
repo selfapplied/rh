@@ -1,11 +1,30 @@
-# Euler + Pascal Computational Implementation
+# Euler + Pascal Computational Implementation<a name="euler--pascal-computational-implementation"></a>
 
-## Specific Algorithm for RH Constants
+<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
 
-### Algorithm 1: Archimedean Constant Computation
+- [Euler + Pascal Computational Implementation](#euler--pascal-computational-implementation)
+  - [Specific Algorithm for RH Constants](#specific-algorithm-for-rh-constants)
+    - [Algorithm 1: Archimedean Constant Computation](#algorithm-1-archimedean-constant-computation)
+    - [Algorithm 2: Bernoulli Numbers from Pascal Triangle](#algorithm-2-bernoulli-numbers-from-pascal-triangle)
+    - [Algorithm 3: Hermite Polynomial Integral](#algorithm-3-hermite-polynomial-integral)
+  - [Finite State Automaton Implementation](#finite-state-automaton-implementation)
+    - [State Definition](#state-definition)
+    - [Transition Function](#transition-function)
+    - [Acceptance Function](#acceptance-function)
+  - [Convergence Guarantees](#convergence-guarantees)
+    - [Theorem: Exponential Convergence](#theorem-exponential-convergence)
+    - [Theorem: Finite Termination](#theorem-finite-termination)
+    - [Theorem: Correctness](#theorem-correctness)
+  - [Implementation Status](#implementation-status)
 
-**Input**: Aperture parameters $(T, m)$, precision $\varepsilon$
-**Output**: $c_A(T,m)$ with error bound $\varepsilon$
+<!-- mdformat-toc end -->
+
+## Specific Algorithm for RH Constants<a name="specific-algorithm-for-rh-constants"></a>
+
+### Algorithm 1: Archimedean Constant Computation<a name="algorithm-1-archimedean-constant-computation"></a>
+
+**Input**: Aperture parameters $(T, m)$, precision $\\varepsilon$
+**Output**: $c_A(T,m)$ with error bound $\\varepsilon$
 
 ```
 function compute_c_A(T, m, ε):
@@ -37,7 +56,7 @@ function compute_c_A(T, m, ε):
     return sum / 2
 ```
 
-### Algorithm 2: Bernoulli Numbers from Pascal Triangle
+### Algorithm 2: Bernoulli Numbers from Pascal Triangle<a name="algorithm-2-bernoulli-numbers-from-pascal-triangle"></a>
 
 **Input**: Index $n$
 **Output**: Bernoulli number $B_n$
@@ -58,10 +77,10 @@ function bernoulli_number(n):
     return (-1)^n * sum
 ```
 
-### Algorithm 3: Hermite Polynomial Integral
+### Algorithm 3: Hermite Polynomial Integral<a name="algorithm-3-hermite-polynomial-integral"></a>
 
 **Input**: Parameters $(T, m, k)$
-**Output**: $\int_0^{\infty} |\varphi''_{T,m}(y)| y^k dy$
+**Output**: $\\int_0^{\\infty} |\\varphi''\_{T,m}(y)| y^k dy$
 
 ```
 function compute_hermite_integral(T, m, k):
@@ -82,9 +101,10 @@ function compute_hermite_integral(T, m, k):
     return T^(k+1) * integral
 ```
 
-## Finite State Automaton Implementation
+## Finite State Automaton Implementation<a name="finite-state-automaton-implementation"></a>
 
-### State Definition
+### State Definition<a name="state-definition"></a>
+
 ```python
 class FSAState:
     def __init__(self, k, j, precision, computed_c_A, computed_C_P):
@@ -95,7 +115,8 @@ class FSAState:
         self.computed_C_P = computed_C_P
 ```
 
-### Transition Function
+### Transition Function<a name="transition-function"></a>
+
 ```python
 def transition(state, action):
     if action == "increase_precision":
@@ -114,26 +135,30 @@ def transition(state, action):
                        compute_C_P(T, m, state.precision))
 ```
 
-### Acceptance Function
+### Acceptance Function<a name="acceptance-function"></a>
+
 ```python
 def is_accepting(state):
     ratio = state.computed_C_P / state.computed_c_A
     return ratio < 1 and state.precision < TARGET_PRECISION
 ```
 
-## Convergence Guarantees
+## Convergence Guarantees<a name="convergence-guarantees"></a>
 
-### Theorem: Exponential Convergence
+### Theorem: Exponential Convergence<a name="theorem-exponential-convergence"></a>
+
 The Euler series expansion converges exponentially:
-$$\left|c_A - c_A^{(K)}\right| \leq \frac{C}{(K+1)!} e^{2T}$$
+$$\\left|c_A - c_A^{(K)}\\right| \\leq \\frac{C}{(K+1)!} e^{2T}$$
 
-### Theorem: Finite Termination
-The FSA terminates in at most $O(\log(1/\varepsilon))$ steps.
+### Theorem: Finite Termination<a name="theorem-finite-termination"></a>
 
-### Theorem: Correctness
-If the FSA accepts, then $C_P/c_A < 1$ is verified to precision $\varepsilon$.
+The FSA terminates in at most $O(\\log(1/\\varepsilon))$ steps.
 
-## Implementation Status
+### Theorem: Correctness<a name="theorem-correctness"></a>
+
+If the FSA accepts, then $C_P/c_A < 1$ is verified to precision $\\varepsilon$.
+
+## Implementation Status<a name="implementation-status"></a>
 
 **✅ Mathematical Framework**: Rigorous Euler + Pascal connection
 **✅ Computational Algorithms**: Specific implementations provided

@@ -1,9 +1,12 @@
+[tool.poetry]
+package-mode = false
+
 [project]
 name = "rh"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13,<3.14"
 dependencies = [
     "matplotlib>=3.10.6",
     "numpy>=2.3.2",
@@ -12,3 +15,38 @@ dependencies = [
     "scipy>=1.14.0",
     "typer>=0.19.1",
 ]
+
+
+[project.optional-dependencies]
+md = [
+    "mdformat>=0.7.21",
+    "mdformat-gfm>=0.3.6",
+    "mdformat-toc>=0.3.0",
+    "mdformat-frontmatter>=0.4.1",
+]
+imports = [
+    "isort>=5.12.0",
+    "autoflake>=2.0.0",
+    "bowler>=0.9.0",
+]
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+known_first_party = ["code", "tools"]
+known_third_party = ["numpy", "matplotlib", "scipy", "typer", "rich", "pytest"]
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+lines_after_imports = 2
+
+[tool.autoflake]
+in-place = true
+recursive = true
+remove-all-unused-imports = true
+remove-unused-variables = true
+remove-duplicate-keys = true
+check = false
