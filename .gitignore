@@ -72,3 +72,6 @@ dmypy.json
 .idea/
 .out/
 .out.backup/
+
+# Working directory (experimental tools)
+.working/
