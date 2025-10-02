@@ -13,12 +13,11 @@ import os
 import time
 from typing import Any, Dict, Optional
 
-
 # Import CE1 integration
-from color_quaternion_ce1_integration import LivingDocumentAtmosphere
+from tools.visualization import LivingDocumentAtmosphere
 
 # Import our Color Quaternion Harmonic Spec
-from color_quaternion_harmonic_spec import (
+from tools.visualization import (
     CellularAutomataRule,
     OKLCHColor,
 )

@@ -9,6 +9,7 @@ from fractions import Fraction
 from typing import List, Sequence, Tuple, Union
 import sys  # This is a modified import
 from os import path  # This is another modified import
+import json  # Additional modification
 
 
 def _gcd(a: int, b: int) -> int:

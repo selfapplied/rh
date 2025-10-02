@@ -11,8 +11,8 @@ import argparse
 import os
 import time
 
-from stamp_cert import write_stamped_ce1
-from stamps import CertificationStamper
+from tools.certification import write_stamped_ce1
+from riemann.verification import CertificationStamper
 
 
 def test_line_lock_variants(base_params: dict) -> dict:

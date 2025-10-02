@@ -14,10 +14,9 @@ import sys
 from typing import Dict, List
 
 
-
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from spring_energy_rh_proof import (
+from riemann.proof import (
     LiKeiperPositivity,
     WeilGuinandPositivity,
     create_spring_kernel,

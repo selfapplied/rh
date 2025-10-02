@@ -33,11 +33,15 @@ _clean:
 _riemann_hypothesis_equilibrium_geometry.pdf: riemann_hypothesis_equilibrium_geometry.tex
 	@echo "Generating CE1 visualizations..."
 	@mkdir -p docs/readme
-	python code/riemann/ce1_simple_visualization.py || echo "Note: Some visualizations may require dependencies"
+	python code/riemann/ce1.py --type both || echo "Note: Some visualizations may require dependencies"
 	@echo "Copying latest visualizations to docs/readme/ directory..."
 	@ls -t .out/ce1_visualization/ce1_involution_*.png 2>/dev/null | head -1 | xargs -I {} cp {} docs/readme/ce1_involution.png 2>/dev/null || echo "No new ce1_involution images"
 	@ls -t .out/ce1_visualization/involution_geometry_*.png 2>/dev/null | head -1 | xargs -I {} cp {} docs/readme/involution_geometry.png 2>/dev/null || echo "No new involution_geometry images"
 	@ls -t .out/ce1_visualization/zeta_landscape_*.png 2>/dev/null | head -1 | xargs -I {} cp {} docs/readme/zeta_landscape.png 2>/dev/null || echo "No new zeta_landscape images"
+	@echo "Generating prism visualizations..."
+	python code/tools/prism.py --facet 8 --out .out/prism_visualization/ || echo "Note: Prism visualizations may require dependencies"
+	@ls -t .out/prism_visualization/*-poly-curved.png 2>/dev/null | head -1 | xargs -I {} cp {} docs/readme/prism_curved.png 2>/dev/null || echo "No new prism_curved images"
+	@ls -t .out/prism_visualization/*-poly-surface.png 2>/dev/null | head -1 | xargs -I {} cp {} docs/readme/prism_surface.png 2>/dev/null || echo "No new prism_surface images"
 	@echo "Visualizations generated and copied successfully"
 	@echo "Building Riemann Hypothesis Equilibrium Geometry paper..."
 	latexmk -xelatex -interaction=nonstopmode -halt-on-error -shell-escape -output-directory=.out riemann_hypothesis_equilibrium_geometry.tex
@@ -68,6 +72,8 @@ _check:
 # Fix common import and code issues automatically
 _fix:
 	@echo "Fixing common import and code issues..."
+	@echo "Fixing broken imports using advanced tool..."
+	python .working/fix_imports.py code/ tools/
 	@echo "Organizing imports (applying changes)..."
 	isort code/ tools/
 	@echo "Removing unused imports and variables (applying changes)..."
