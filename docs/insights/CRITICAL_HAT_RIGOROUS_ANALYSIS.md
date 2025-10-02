@@ -5,10 +5,12 @@
 - [Critical Hat: Current Status & Interpretation](#critical-hat-current-status--interpretation)
   - [🎯 Current Status (October 2025)](#%F0%9F%8E%AF-current-status-october-2025)
   - [✅ What We Have (Rigorous)](#%E2%9C%85-what-we-have-rigorous)
+    - [Complete Mathematical Foundation:](#complete-mathematical-foundation)
   - [🔬 The Li-Stieltjes Breakthrough](#%F0%9F%94%AC-the-li-stieltjes-breakthrough)
   - [🎭 Interpretation & Meaning](#%F0%9F%8E%AD-interpretation--meaning)
   - [🚀 Next Steps](#%F0%9F%9A%80-next-steps)
   - [📚 Related Documents](#%F0%9F%93%9A-related-documents)
+  - [Implementation Status](#implementation-status)
 
 <!-- mdformat-toc end -->
 
@@ -22,9 +24,10 @@ The Li-Stieltjes Transform Theorem (October 1, 2025) has transformed the critica
 
 > **For formal mathematical definitions and rigorous proofs, see**: [Critical Hat Existence Theorem](../../math/theorems/critical_hat_existence_theorem.md) and [Li-Stieltjes Transform Theorem](../../math/theorems/li_stieltjes_transform_theorem.md)
 
-### **Complete Mathematical Foundation**:
+### **Complete Mathematical Foundation**:<a name="complete-mathematical-foundation"></a>
+
 - ✅ **Existence Theorem**: Critical hat kernels exist mathematically
-- ✅ **Li-Stieltjes Connection**: Hankel PSD is automatic via moment theory  
+- ✅ **Li-Stieltjes Connection**: Hankel PSD is automatic via moment theory
 - ✅ **Herglotz Structure**: Fully rigorous Pick-Nevanlinna theory
 - ✅ **Computational Framework**: Working implementation in `spring_energy_rh_proof.py`
 - ✅ **Parameter Continuity**: Numerical search guaranteed to succeed
@@ -36,11 +39,12 @@ The Li-Stieltjes Transform Theorem (October 1, 2025) has transformed the critica
 The Li-Stieltjes Transform Theorem proves that the Li generating function is a **Stieltjes transform** of a positive measure. This makes Hankel positivity **automatic** - no computation needed!
 
 **Key Achievement**:
+
 1. **Herglotz function** H_θ(w) maps ℂ⁺→ℂ⁺ (rigorously proven)
-2. **Stieltjes representation** on positive measure μ_θ
-3. **Moment formula** λ_n = ∫ t^n dμ_θ(t) 
-4. **Hankel PSD automatic** by Stieltjes moment theorem
-5. **No RH assumption** - works for any self-dual kernel
+1. **Stieltjes representation** on positive measure μ_θ
+1. **Moment formula** λ_n = ∫ t^n dμ_θ(t)
+1. **Hankel PSD automatic** by Stieltjes moment theorem
+1. **No RH assumption** - works for any self-dual kernel
 
 ## 🎭 Interpretation & Meaning<a name="%F0%9F%8E%AD-interpretation--meaning"></a>
 
@@ -58,9 +62,9 @@ The Li-Stieltjes Transform Theorem proves that the Li generating function is a *
 **The theoretical foundation is complete. What remains is computational verification**:
 
 1. **Run 2D parameter scan** to find θ_⋆ where eigenvalue crosses zero
-2. **Verify numerical stability** with extended zero lists
-3. **Test higher precision** for σ < 1 cases
-4. **Document critical configuration** for publication
+1. **Verify numerical stability** with extended zero lists
+1. **Test higher precision** for σ < 1 cases
+1. **Document critical configuration** for publication
 
 **The proof is structurally complete and mathematically rigorous. We're in the refinement and verification phase, not the discovery phase.**
 

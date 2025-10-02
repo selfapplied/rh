@@ -13,16 +13,16 @@ import sys
 from dataclasses import dataclass
 from typing import Dict, List
 
-from mathematical_foundations import MathematicalProof, RealMathematicalProofs
+from riemann.mathematical_foundations import MathematicalProof, RealMathematicalProofs
 
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from real_mathematical_constants import (
+from riemann.constants import (
     RealMathematicalComputer,
     RealMathematicalConstants,
 )
-from real_zeta_connection import RealZetaConnection, ZetaFunctionData
+from riemann.zeta import RealZetaConnection, ZetaFunctionData
 
 
 @dataclass

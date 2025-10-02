@@ -2,7 +2,7 @@
 """Simple test of RH system components"""
 
 
-from riemann.analysis.rh_analyzer import (
+from code.riemann.analysis.rh_analyzer import (
     AngularVelocity,
     GyroscopeLoss,
     PascalKernel,

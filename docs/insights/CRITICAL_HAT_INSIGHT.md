@@ -14,11 +14,6 @@
     - [Enhanced Mellin Hat (Best Performer)](#enhanced-mellin-hat-best-performer)
     - [Other Hat Types](#other-hat-types)
   - [The Critical Hat Proof Path](#the-critical-hat-proof-path)
-    - [1. Hat Construction](#1-hat-construction)
-    - [2. Critical Line Preservation](#2-critical-line-preservation)
-    - [3. Spectral Positivity](#3-spectral-positivity)
-    - [4. Explicit Formula Positivity](#4-explicit-formula-positivity)
-    - [5. RH Connection](#5-rh-connection)
   - [Key Insights from the Critical Hat](#key-insights-from-the-critical-hat)
     - [1. Unified Framework](#1-unified-framework)
     - [2. Direct Positivity](#2-direct-positivity)
@@ -33,7 +28,8 @@
     - [3. Computational Efficiency](#3-computational-efficiency-1)
     - [4. Theoretical Clarity](#4-theoretical-clarity)
   - [Conclusion](#conclusion)
-  - [Next Steps](#next-steps)
+  - [Related Documents](#related-documents)
+  - [Implementation Status](#implementation-status)
 
 <!-- mdformat-toc end -->
 
@@ -53,7 +49,7 @@ The critical hat is a convolution kernel that acts as a filter preserving the cr
 
 The fundamental properties are rigorously proven in the [Critical Hat Existence Theorem](../../math/theorems/critical_hat_existence_theorem.md):
 
-1. **Critical Line Preservation**: The hat preserves `Re(s) = 1/2` 
+1. **Critical Line Preservation**: The hat preserves `Re(s) = 1/2`
 1. **Spectral Positivity**: The hat ensures positive spectrum through Bochner's theorem
 1. **Energy Conservation**: The hat maintains energy through convolution
 1. **RH Connection**: The hat connects directly to RH through explicit formula
@@ -99,10 +95,10 @@ The fundamental properties are rigorously proven in the [Critical Hat Existence 
 The critical hat proof path involves:
 
 1. **Hat Construction**: Building the convolution kernel family
-2. **Critical Line Preservation**: Ensuring the kernel preserves `Re(s) = 1/2`
-3. **Spectral Positivity**: Verifying positive spectrum through Bochner's theorem
-4. **Explicit Formula Positivity**: Connecting to the Weil explicit formula
-5. **RH Connection**: Establishing the direct connection to RH through Li criterion
+1. **Critical Line Preservation**: Ensuring the kernel preserves `Re(s) = 1/2`
+1. **Spectral Positivity**: Verifying positive spectrum through Bochner's theorem
+1. **Explicit Formula Positivity**: Connecting to the Weil explicit formula
+1. **RH Connection**: Establishing the direct connection to RH through Li criterion
 
 **Implementation**: The computational framework is implemented in `code/riemann/proof/spring_energy_rh_proof.py`
 
@@ -200,7 +196,7 @@ The critical hat doesn't just add to our proof—it **transforms** it into a mor
 ## Related Documents<a name="related-documents"></a>
 
 - **[Critical Hat Existence Theorem](../../math/theorems/critical_hat_existence_theorem.md)**: Formal mathematical foundation
-- **[Critical Hat Rigorous Analysis](critical_hat_rigorous_analysis.md)**: Status and interpretation analysis  
+- **[Critical Hat Rigorous Analysis](critical_hat_rigorous_analysis.md)**: Status and interpretation analysis
 - **[Spring Energy RH Proof](../../code/riemann/proof/spring_energy_rh_proof.py)**: Computational implementation
 - **[Proof Synthesis](../analysis/proof_synthesis.md)**: Conceptual unification framework
 

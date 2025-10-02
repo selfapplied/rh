@@ -24,6 +24,7 @@
     - [The Complete Framework](#the-complete-framework)
     - [From Poetry to Biology](#from-poetry-to-biology)
   - [Conclusion](#conclusion)
+  - [Next Steps](#next-steps)
 
 <!-- mdformat-toc end -->
 
@@ -191,16 +192,16 @@ The modular protein architecture provides a complete framework for understanding
 **Research Priorities**:
 
 1. **Map the complete phase-locking landscape** to identify all dimensional openings beyond A=13
-2. **Develop the Toeplitz factorization pipeline** for prime detection using dimensional openings
-3. **Connect to the Riemann hypothesis framework** through the spring energy formalism
-4. **Implement the Schur recursion** for energy conservation in edge events
+1. **Develop the Toeplitz factorization pipeline** for prime detection using dimensional openings
+1. **Connect to the Riemann hypothesis framework** through the spring energy formalism
+1. **Implement the Schur recursion** for energy conservation in edge events
 
 **Computational Development**:
 
 1. **Develop computational tools** for Pascal Triangle, Quaternion, and Kernel analysis
-2. **Extend parameter analysis** to identify additional dimensional openings
-3. **Validate phase-locking hierarchy** across different modular bases
-4. **Integrate with critical hat framework** for unified RH proof approach
+1. **Extend parameter analysis** to identify additional dimensional openings
+1. **Validate phase-locking hierarchy** across different modular bases
+1. **Integrate with critical hat framework** for unified RH proof approach
 
 ______________________________________________________________________
 

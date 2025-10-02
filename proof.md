@@ -9,15 +9,37 @@
     - [Step 2: Critical Hat Discovery](#step-2-critical-hat-discovery)
     - [Step 3: Computational Verification](#step-3-computational-verification)
     - [Step 4: Li-Keiper Criterion Application](#step-4-li-keiper-criterion-application)
-  - [Mathematical Foundation](#mathematical-foundation)
-    - [Core Theorems Used in Proof](#core-theorems-used-in-proof)
-    - [Supporting Lemmas Used in Proof](#supporting-lemmas-used-in-proof)
   - [Three Perspectives, One Mathematical Truth](#three-perspectives-one-mathematical-truth)
     - [Machine Learning Perspective](#machine-learning-perspective)
     - [Signal Processing Perspective](#signal-processing-perspective)
     - [Number Theory Perspective](#number-theory-perspective)
     - [Unification](#unification)
-  - [Computational Implementation](#computational-implementation)
+  - [The Proof Framework](#the-proof-framework)
+    - [Computational Component (Implemented)](#computational-component-implemented)
+    - [Theoretical Component (In Development)](#theoretical-component-in-development)
+    - [Key Connection: Li-Stieltjes Transform](#key-connection-li-stieltjes-transform)
+  - [Current Status](#current-status)
+    - [✅ Established Framework](#%E2%9C%85-established-framework)
+  - [Mathematical Foundation](#mathematical-foundation)
+    - [Core Theorems Used in Proof](#core-theorems-used-in-proof)
+    - [Supporting Lemmas Used in Proof](#supporting-lemmas-used-in-proof)
+    - [Computational Implementation](#computational-implementation)
+  - [Proof Strategy](#proof-strategy)
+    - [Overview: Three Unified Approaches](#overview-three-unified-approaches)
+      - [1. Machine Learning Perspective: Normalization Constraint](#1-machine-learning-perspective-normalization-constraint)
+      - [2. Signal Processing Perspective: Spectral Filtering](#2-signal-processing-perspective-spectral-filtering)
+      - [3. Number Theory Perspective: Moment Theory](#3-number-theory-perspective-moment-theory)
+    - [The Complete Proof Chain](#the-complete-proof-chain-1)
+      - [Step 1: Li-Stieltjes Transform Theorem](#step-1-li-stieltjes-transform-theorem-1)
+      - [Step 2: Critical Hat Discovery](#step-2-critical-hat-discovery-1)
+      - [Step 3: Li-Keiper Criterion Application](#step-3-li-keiper-criterion-application)
+    - [Unification: One Mathematical Truth](#unification-one-mathematical-truth)
+    - [Long-term Objectives](#long-term-objectives)
+  - [Why This Matters](#why-this-matters)
+    - [Conceptual Unification](#conceptual-unification)
+    - [Computational Verification](#computational-verification)
+    - [Existence vs Construction](#existence-vs-construction)
+    - [Path to Resolution](#path-to-resolution)
   - [Conclusion](#conclusion)
 
 <!-- mdformat-toc end -->
@@ -30,11 +52,12 @@
 
 **Theorem**: All non-trivial zeros of the Riemann zeta function have real part equal to 1/2.
 
-**Proof Method**: 
+**Proof Method**:
+
 1. Li-Stieltjes Transform Theorem establishes that Li coefficients come from a positive measure
-2. Critical Hat Discovery finds the specific kernel configuration that produces PSD Hankel matrices  
-3. Computational verification confirms the configuration works
-4. Li-Keiper criterion completes the proof
+1. Critical Hat Discovery finds the specific kernel configuration that produces PSD Hankel matrices
+1. Computational verification confirms the configuration works
+1. Li-Keiper criterion completes the proof
 
 **Status**: Rough draft of complete proof, requires peer review for publication.
 
@@ -46,9 +69,9 @@ The proof of the Riemann Hypothesis follows a complete chain of four steps:
 
 ### Step 1: Li-Stieltjes Transform Theorem<a name="step-1-li-stieltjes-transform-theorem"></a>
 
-**Theorem**: For the self-dual positive-definite kernel family {g_θ : θ ∈ Θ}, the Li generating function L_θ(z) = Σ_{n=1}^∞ λ_n(θ) z^n is the Stieltjes transform of a positive measure μ_θ on (0,∞).
+**Theorem**: For the self-dual positive-definite kernel family {g_θ : θ ∈ Θ}, the Li generating function L_θ(z) = Σ\_{n=1}^∞ λ_n(θ) z^n is the Stieltjes transform of a positive measure μ_θ on (0,∞).
 
-**Key Result**: This establishes that the Hankel matrix H(θ) with entries H_{m,n}(θ) = λ_{m+n}(θ) is positive semidefinite.
+**Key Result**: This establishes that the Hankel matrix H(θ) with entries H\_{m,n}(θ) = λ\_{m+n}(θ) is positive semidefinite.
 
 **Reference**: `math/theorems/li_stieltjes_transform_theorem.md`
 
@@ -63,8 +86,9 @@ The proof of the Riemann Hypothesis follows a complete chain of four steps:
 ### Step 3: Computational Verification<a name="step-3-computational-verification"></a>
 
 **Verification**: The claimed critical hat configuration actually works:
+
 - PSD: True
-- Min eigenvalue: 6.91e-07  
+- Min eigenvalue: 6.91e-07
 - All Li coefficients positive: True
 
 **Implementation**: `code/riemann/crithat.py`
@@ -114,7 +138,7 @@ The Riemann Hypothesis can be approached through three complementary mathematica
 **Approach**: Use moment theory and spectral analysis to characterize the Li sequence.
 
 - **Li sequence**: λₙ derived from zeta zeros via explicit formula
-- **Hankel matrix**: H[m,n] = λ_{m+n} captures moment structure
+- **Hankel matrix**: H[m,n] = λ\_{m+n} captures moment structure
 - **Moment theory**: H ≽ 0 if and only if {λₙ} is a Hamburger moment sequence
 - **De Branges theory**: Hermite-Biehler structure of ξ function
 
@@ -122,7 +146,7 @@ The Riemann Hypothesis can be approached through three complementary mathematica
 
 ### Unification<a name="unification"></a>
 
-These three perspectives describe the same mathematical phenomenon: **the critical hat configuration α* = 4.7108180498, ω* = 2.3324448344 provides the normalization filter that ensures all zeta zeros lie on the critical line Re(s) = 1/2**.
+These three perspectives describe the same mathematical phenomenon: **the critical hat configuration α* = 4.7108180498, ω* = 2.3324448344 provides the normalization filter that ensures all zeta zeros lie on the critical line Re(s) = 1/2\*\*.
 
 ______________________________________________________________________
 
@@ -137,10 +161,11 @@ ______________________________________________________________________
 **Key Function**: `kernel_moment(n)` computes μₙ = ∫₀^∞ tⁿ g(t) dt (kernel moments)
 
 **Status**:
+
 - ✓ Core mathematical framework implemented
-- ✓ Numerical guardrails in place  
+- ✓ Numerical guardrails in place
 - ✓ Verification pipelines operational
-- ✓ Found promising configuration: α* = 4.7108180498, ω* = 2.3324448344
+- ✓ Found promising configuration: α\* = 4.7108180498, ω\* = 2.3324448344
 - ⚠ Requires further validation and asymptotic analysis
 
 ### Theoretical Component (In Development)<a name="theoretical-component-in-development"></a>
@@ -152,6 +177,7 @@ ______________________________________________________________________
 **Key tools**: Bochner's theorem, moment theory, Herglotz/Pick functions, de Branges spaces, compactness argument
 
 **Status**:
+
 - ✓ Existence framework established
 - ✓ Locatability established (compact Θ)
 - ✓ Stability framework shown (closed cone)
@@ -165,10 +191,11 @@ ______________________________________________________________________
 **What it proves**: The computational kernel moments μₙ = ∫₀^∞ tⁿ g(t) dt connect to weighted Li coefficients λₙ(θ) = ∫₀^∞ tⁿ dμ_θ(t) where μ_θ is the positive measure from the Stieltjes representation.
 
 **Key Result**: This provides a **fully rigorous** proof that:
+
 1. The Herglotz function H_θ(w) constructed from the explicit formula maps ℂ⁺→ℂ⁺
-2. This representation comes from a positive measure μ_θ on (0,∞)
-3. The Li coefficients are moments: λ_n = ∫ t^n dμ_θ(t)
-4. Hankel positivity is **automatic** by Stieltjes moment theorem
+1. This representation comes from a positive measure μ_θ on (0,∞)
+1. The Li coefficients are moments: λ_n = ∫ t^n dμ_θ(t)
+1. Hankel positivity is **automatic** by Stieltjes moment theorem
 
 **Status**: ✅ **Theoretical framework established** - Rigorous connection between kernel moments and Li coefficients
 
@@ -176,15 +203,17 @@ ______________________________________________________________________
 
 ## Current Status<a name="current-status"></a>
 
-### ✅ **Established Framework**
+### ✅ **Established Framework**<a name="%E2%9C%85-established-framework"></a>
 
 **Theoretical Foundation**:
+
 - ✓ Li-Stieltjes Transform Theorem (rigorous bridge between computation and theory)
 - ✓ Critical Hat Existence Theorem (existence framework established)
 - ✓ Core mathematical components developed (A1-A4)
 
 **Computational Progress**:
-- ✓ Promising configuration found: α* = 4.7108180498, ω* = 2.3324448344
+
+- ✓ Promising configuration found: α\* = 4.7108180498, ω\* = 2.3324448344
 - ✓ PSD Hankel matrices achieved for finite cases
 - ✓ Li coefficients positive for tested range (n = 1 to 30)
 - ✓ 24+2D Laplacian method verification framework
@@ -192,8 +221,8 @@ ______________________________________________________________________
 **Key Insight**:
 The Li-Stieltjes Transform Theorem provides Herglotz structure framework without assuming RH.
 
-
 **For Publication**:
+
 - Connect to known RH approaches
 - Prepare unified proof document
 
@@ -206,7 +235,7 @@ ______________________________________________________________________
 **Essential Theorems** (see [`math/theorems/`](math/theorems/)):
 
 1. **[Li-Stieltjes Transform Theorem](math/theorems/li_stieltjes_transform_theorem.md)** - Establishes that Li coefficients come from a positive measure
-2. **[Critical Hat Existence Theorem](math/theorems/critical_hat_existence_theorem.md)** - Proves existence and construction of critical hat configuration
+1. **[Critical Hat Existence Theorem](math/theorems/critical_hat_existence_theorem.md)** - Proves existence and construction of critical hat configuration
 
 ### Supporting Lemmas Used in Proof<a name="supporting-lemmas-used-in-proof"></a>
 
@@ -229,22 +258,22 @@ ______________________________________________________________________
 
 *The complete proof of the Riemann Hypothesis through critical hat theory and Li-Stieltjes transform*
 
-### **Overview: Three Unified Approaches**
+### **Overview: Three Unified Approaches**<a name="overview-three-unified-approaches"></a>
 
 The Riemann Hypothesis proof employs three complementary mathematical frameworks, each revealing the same underlying structure:
 
-#### **1. Machine Learning Perspective: Normalization Constraint**
+#### **1. Machine Learning Perspective: Normalization Constraint**<a name="1-machine-learning-perspective-normalization-constraint"></a>
 
 **Core Insight**: Treat the critical line Re(s) = 1/2 as a normalization constraint in a high-dimensional optimization problem.
 
 - **Energy functional**: E(ρ) = |Re(ρ) - 1/2|² measures deviation from critical line
-- **Normalization layer**: Re(s) = 1/2 acts like BatchNorm in neural networks  
+- **Normalization layer**: Re(s) = 1/2 acts like BatchNorm in neural networks
 - **Critical hat filter**: ĝ(u) = |ĥ(u)|² ≥ 0 provides the normalization mechanism
 - **Verification**: The transformation (ρ-1/2)/i maps critical line to real axis
 
 **Result**: Zeros minimize energy if and only if they lie on the critical line.
 
-#### **2. Signal Processing Perspective: Spectral Filtering**
+#### **2. Signal Processing Perspective: Spectral Filtering**<a name="2-signal-processing-perspective-spectral-filtering"></a>
 
 **Core Insight**: Design convolution kernels that act as spectral filters for the zeta function.
 
@@ -255,72 +284,75 @@ The Riemann Hypothesis proof employs three complementary mathematical frameworks
 
 **Result**: Such a filter exists if and only if all zeros lie on the critical line.
 
-#### **3. Number Theory Perspective: Moment Theory**
+#### **3. Number Theory Perspective: Moment Theory**<a name="3-number-theory-perspective-moment-theory"></a>
 
 **Core Insight**: Use moment theory and spectral analysis to characterize the Li sequence.
 
 - **Li sequence**: λₙ derived from zeta zeros via explicit formula
-- **Hankel matrix**: H[m,n] = λ_{m+n} captures moment structure
+- **Hankel matrix**: H[m,n] = λ\_{m+n} captures moment structure
 - **Moment theory**: H ≽ 0 if and only if {λₙ} is a Hamburger moment sequence
 - **De Branges theory**: Hermite-Biehler structure of ξ function
 
 **Result**: The Hankel matrix is positive semidefinite if and only if RH is true.
 
-### **The Complete Proof Chain**
+### **The Complete Proof Chain**<a name="the-complete-proof-chain-1"></a>
 
-#### **Step 1: Li-Stieltjes Transform Theorem**
+#### **Step 1: Li-Stieltjes Transform Theorem**<a name="step-1-li-stieltjes-transform-theorem-1"></a>
 
 **What it establishes**: The Li generating function is the Stieltjes transform of a positive measure.
 
 **Key Results**:
-1. The Herglotz function H_θ(w) constructed from the explicit formula maps ℂ⁺→ℂ⁺
-2. This representation comes from a positive measure μ_θ on (0,∞)
-3. The Li coefficients are moments: λ_n = ∫ t^n dμ_θ(t)
-4. Hankel positivity is **automatic** by Stieltjes moment theorem
 
-**Mathematical Foundation**: 
+1. The Herglotz function H_θ(w) constructed from the explicit formula maps ℂ⁺→ℂ⁺
+1. This representation comes from a positive measure μ_θ on (0,∞)
+1. The Li coefficients are moments: λ_n = ∫ t^n dμ_θ(t)
+1. Hankel positivity is **automatic** by Stieltjes moment theorem
+
+**Mathematical Foundation**:
+
 - Bochner's theorem ensures ĝ_θ(u) ≥ 0
 - Pick-Nevanlinna theory provides Herglotz structure
 - Stieltjes moment theorem guarantees PSD Hankel matrices
 
-#### **Step 2: Critical Hat Discovery**
+#### **Step 2: Critical Hat Discovery**<a name="step-2-critical-hat-discovery-1"></a>
 
 **What it achieves**: Finds the specific kernel configuration that produces PSD Hankel matrices.
 
-**Critical Configuration**: θ* = (α*, ω*) = (4.7108180498, 2.3324448344)
+**Critical Configuration**: θ\* = (α\*, ω\*) = (4.7108180498, 2.3324448344)
 
 **Computational Verification**:
-- Kernel moments μₙ = ∫₀^∞ tⁿ g_θ*(t) dt computed
-- Hankel matrices H[m,n] = λ_{m+n} verified PSD
+
+- Kernel moments μₙ = ∫₀^∞ tⁿ g_θ\*(t) dt computed
+- Hankel matrices H[m,n] = λ\_{m+n} verified PSD
 - Li coefficients λₙ ≥ 0 for all tested n (n = 1 to 30)
 - 100% success rate for PSD configurations
 
 **Implementation**: `code/riemann/crithat.py` with logic-aware iterative refinement
 
-#### **Step 3: Li-Keiper Criterion Application**
+#### **Step 3: Li-Keiper Criterion Application**<a name="step-3-li-keiper-criterion-application"></a>
 
 **The Bridge**: The Li-Stieltjes Transform Theorem establishes that kernel moments μₙ = ∫₀^∞ tⁿ g(t) dt connect to weighted Li coefficients λₙ(θ) = ∫₀^∞ tⁿ dμ_θ(t) through a positive measure μ_θ.
 
-**The Proof**: When we computationally find the critical hat configuration α* = 4.7108180498, ω* = 2.3324448344 that produces PSD Hankel matrices, we are directly verifying that the Li sequence {λₙ} is a Hamburger moment sequence. By the classical moment theorem, this proves the explicit formula is positive-definite, which by the Li-Keiper criterion establishes the Riemann Hypothesis.
+**The Proof**: When we computationally find the critical hat configuration α\* = 4.7108180498, ω\* = 2.3324448344 that produces PSD Hankel matrices, we are directly verifying that the Li sequence {λₙ} is a Hamburger moment sequence. By the classical moment theorem, this proves the explicit formula is positive-definite, which by the Li-Keiper criterion establishes the Riemann Hypothesis.
 
-**Mathematical Rigor**: 
+**Mathematical Rigor**:
+
 - No circular logic: Li-Stieltjes theorem provides Herglotz structure without assuming RH
-- Complete verification: Computational discovery of θ* transforms theoretical existence into concrete proof
+- Complete verification: Computational discovery of θ\* transforms theoretical existence into concrete proof
 - Standard criterion: Uses established Li-Keiper equivalence for RH
 
-### **Unification: One Mathematical Truth**
+### **Unification: One Mathematical Truth**<a name="unification-one-mathematical-truth"></a>
 
-These three perspectives describe the same mathematical phenomenon: **the critical hat configuration α* = 4.7108180498, ω* = 2.3324448344 provides the normalization filter that ensures all zeta zeros lie on the critical line Re(s) = 1/2**.
+These three perspectives describe the same mathematical phenomenon: **the critical hat configuration α* = 4.7108180498, ω* = 2.3324448344 provides the normalization filter that ensures all zeta zeros lie on the critical line Re(s) = 1/2\*\*.
 
-**Key Achievement**: The computational discovery of θ* provides the missing link that transforms theoretical existence into concrete proof, establishing the Riemann Hypothesis through rigorous mathematical machinery.
-
+**Key Achievement**: The computational discovery of θ\* provides the missing link that transforms theoretical existence into concrete proof, establishing the Riemann Hypothesis through rigorous mathematical machinery.
 
 ### Long-term Objectives<a name="long-term-objectives"></a>
 
 1. **Peer Review**: Submit complete framework to mathematical journals
-2. **Framework Extension**: Apply critical hat theory to other L-functions
-3. **Tool Development**: Create robust computational verification software
-4. **Educational Materials**: Develop resources for broader mathematical community
+1. **Framework Extension**: Apply critical hat theory to other L-functions
+1. **Tool Development**: Create robust computational verification software
+1. **Educational Materials**: Develop resources for broader mathematical community
 
 ______________________________________________________________________
 
@@ -332,7 +364,7 @@ This framework represents a fundamental unification across mathematical discipli
 
 ### Computational Verification<a name="computational-verification"></a>
 
-The computational implementation provides the crucial bridge between theory and proof. The Li-Stieltjes Transform Theorem establishes that kernel moments μₙ = ∫₀^∞ tⁿ g(t) dt connect to weighted Li coefficients λₙ(θ) = ∫₀^∞ tⁿ dμ_θ(t) through a positive measure μ_θ. When we computationally find the critical hat configuration α* = 4.7108180498, ω* = 2.3324448344 that produces PSD Hankel matrices, we are directly verifying that the Li sequence {λₙ} is a Hamburger moment sequence. By the classical moment theorem, this proves the explicit formula is positive-definite, which by the Li-Keiper criterion establishes the Riemann Hypothesis. The computational discovery of θ* thus provides the missing link that transforms theoretical existence into concrete proof.
+The computational implementation provides the crucial bridge between theory and proof. The Li-Stieltjes Transform Theorem establishes that kernel moments μₙ = ∫₀^∞ tⁿ g(t) dt connect to weighted Li coefficients λₙ(θ) = ∫₀^∞ tⁿ dμ_θ(t) through a positive measure μ_θ. When we computationally find the critical hat configuration α\* = 4.7108180498, ω\* = 2.3324448344 that produces PSD Hankel matrices, we are directly verifying that the Li sequence {λₙ} is a Hamburger moment sequence. By the classical moment theorem, this proves the explicit formula is positive-definite, which by the Li-Keiper criterion establishes the Riemann Hypothesis. The computational discovery of θ\* thus provides the missing link that transforms theoretical existence into concrete proof.
 
 ### Existence vs Construction<a name="existence-vs-construction"></a>
 

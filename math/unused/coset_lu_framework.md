@@ -38,6 +38,9 @@
     - [Why This Works](#why-this-works)
     - [The Complete Picture](#the-complete-picture)
   - [Status: Ready for Implementation](#status-ready-for-implementation)
+  - [References](#references)
+    - [Lattice Theory and Modular Forms](#lattice-theory-and-modular-forms)
+    - [Diophantine Approximation](#diophantine-approximation)
 
 <!-- mdformat-toc end -->
 

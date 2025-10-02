@@ -42,19 +42,17 @@ discovery that unblocks the main proof pathway through dimensional lifting
 and geometric kernel analysis.
 """
 
-from dataclasses import InitVar, dataclass
-import inspect
-from typing import Any, Callable, Dict, List, NamedTuple, Tuple
+from dataclasses import dataclass
+from functools import lru_cache
+from typing import Any, Callable, Dict, List, Tuple
 
 import numpy as np
-from scipy.integrate import quad
-from scipy.linalg import hankel
 import typer
 from rich.console import Console
-from rich.table import Table
-from rich.text import Text
 from rich.panel import Panel
-from functools import lru_cache
+from scipy.integrate import quad
+from scipy.linalg import hankel
+
 
 @dataclass
 class CriticalHatConfig:
@@ -471,10 +469,10 @@ def display_results(config, is_psd, min_eigenval, condition_number, lambda_value
 
     # Use color_from_value for boolean checks
     # green if True, red if False
-    psd_style = color_from_value(0 if is_psd else 1, [0.5], "gr")
+    color_from_value(0 if is_psd else 1, [0.5], "gr")
     lambda_style = color_from_value(0 if all_positive else 1, [
                                     0.5], "gr")  # green if True, red if False
-    cond_style = color_from_value(condition_number, [1e6, 1e8], "gyr")
+    color_from_value(condition_number, [1e6, 1e8], "gyr")
 
     # Use color template for automatic field coloring
     template = "α {alpha:.3f} ω {omega:.3f} σ {sigma:.3f} | PSD {psd} λ≥0 {lambda_pos} | Cond {cond:.1e}"
@@ -875,7 +873,6 @@ def curvature_nan_aware(L, S: np.ndarray) -> np.ndarray:
     the topological structure of the parameter space where the Li-Keiper criterion
     becomes valid.
     """
-    import scipy.sparse as sp
     assert S.ndim == 1
     finite = np.isfinite(S)
     S0 = np.where(finite, S, 0.0)

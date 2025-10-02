@@ -7,19 +7,19 @@
   - [Overview](#overview)
   - [Project structure](#project-structure)
     - [Status and Disclaimer](#status-and-disclaimer)
-    - [**`proof.md`** - Complete proof of the Riemann Hypothesis](#proofmd---complete-proof-of-the-riemann-hypothesis)
-    - [**`math/`** - Mathematical Foundation](#math---mathematical-foundation)
-    - [**`code/`** - Computational implementation](#code---computational-implementation)
-    - [**`docs/`** - Documentation](#docs---documentation)
-    - [**`data/`** - Computational outputs and certificates](#data---computational-outputs-and-certificates)
+    - [`proof.md` - Complete proof of the Riemann Hypothesis](#proofmd---complete-proof-of-the-riemann-hypothesis)
+    - [`math/` - Mathematical Foundation](#math---mathematical-foundation)
+    - [`code/` - Computational implementation](#code---computational-implementation)
+    - [`docs/` - Documentation](#docs---documentation)
+    - [`data/` - Computational outputs and certificates](#data---computational-outputs-and-certificates)
   - [Mathematical framework](#mathematical-framework)
     - [Mathematical framework overview](#mathematical-framework-overview)
     - [AX-mas mathematical framework](#ax-mas-mathematical-framework)
     - [Mathematical theorems](#mathematical-theorems)
   - [Getting started](#getting-started)
-    - [**1. Begin with the Program Overview**](#1-begin-with-the-program-overview)
+    - [1. Begin with the Program Overview](#1-begin-with-the-program-overview)
     - [2. Dive into the mathematical foundation](#2-dive-into-the-mathematical-foundation)
-    - [**3. Computational Verification and Analysis**](#3-computational-verification-and-analysis)
+    - [3. Computational Verification and Analysis](#3-computational-verification-and-analysis)
     - [4. Advanced computational tools](#4-advanced-computational-tools)
     - [5. Testing and validation](#5-testing-and-validation)
   - [Significant contributions](#significant-contributions)
@@ -38,13 +38,7 @@
   - [Project status](#project-status)
   - [Important considerations and next steps](#important-considerations-and-next-steps)
   - [Emoji usage](#emoji-usage)
-  - [Project Status \& Next Steps](#project-status--next-steps)
-  - [Consolidated Project Roadmap](#consolidated-project-roadmap)
-    - [**Current Status (October 2025)**](#current-status-october-2025)
-    - [**Immediate Priorities (Next 2 weeks)**](#immediate-priorities-next-2-weeks)
-    - [**Short-term Goals (1-2 months)**](#short-term-goals-1-2-months)
-    - [**Long-term Objectives (3-6 months)**](#long-term-objectives-3-6-months)
-    - [**Implementation Status**](#implementation-status)
+  - [Project Status & Next Steps](#project-status--next-steps)
 
 <!-- mdformat-toc end -->
 
@@ -309,4 +303,3 @@ Emojis are part of the ecosystem but are scoped to their appropriate domain:
 **Proof Chain**: Li-Stieltjes Transform → Critical Hat Discovery → Computational Verification → Li-Keiper Criterion → RH Proven
 
 **Note**: This is a complete proof that requires peer review for publication.
-

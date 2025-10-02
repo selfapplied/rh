@@ -23,18 +23,15 @@ The system uses previous lambda estimates as decision factors to resolve oscilla
 - Naturally steers search away from oscillatory regions
 """
 
-import numpy as np
-import scipy.sparse as sp
-from scipy.linalg import eigh
-from scipy.sparse.linalg import eigsh
-from scipy.ndimage import gaussian_filter
-from typing import Tuple, List, Dict, Any, Optional
+import hashlib
 from dataclasses import dataclass
 from functools import lru_cache
-import hashlib
+from typing import Any, Dict, List, Tuple
+
+import numpy as np
 from rich.console import Console
-from rich.table import Table
 from rich.panel import Panel
+
 
 # ============================================================================
 # LOGIC-AWARE GATE SYSTEM

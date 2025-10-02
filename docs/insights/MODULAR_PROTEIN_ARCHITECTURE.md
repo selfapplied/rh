@@ -5,12 +5,12 @@
 - [Modular Protein Architecture: The Complete Structural Framework](#modular-protein-architecture-the-complete-structural-framework)
   - [Executive Summary](#executive-summary)
   - [The Complete Structural Framework](#the-complete-structural-framework)
-    - [🧬 Modular Protein Structure](#%F0%9F%A7%AC-modular-protein-structure)
+    - [🔬 Mathematical Structure Framework](#%F0%9F%94%AC-mathematical-structure-framework)
     - [🔬 Mathematical Foundation](#%F0%9F%94%AC-mathematical-foundation)
-  - [The α/β Interplay](#the-%CE%B1%CE%B2-interplay)
-    - [β-Pleats as Curvature Discontinuities](#%CE%B2-pleats-as-curvature-discontinuities)
-    - [α-Springs as Torsion Stabilizers](#%CE%B1-springs-as-torsion-stabilizers)
-    - [Self-Balancing Mechanism](#self-balancing-mechanism)
+  - [The Three Mathematical Views](#the-three-mathematical-views)
+    - [Pascal Triangle View: Area-Based Analysis](#pascal-triangle-view-area-based-analysis)
+    - [Quaternion View: Solid Angle Analysis](#quaternion-view-solid-angle-analysis)
+    - [Kernel View: Second Moment Analysis](#kernel-view-second-moment-analysis)
   - [Geometric Visualization](#geometric-visualization)
     - [The Modular Origami Structure](#the-modular-origami-structure)
     - [The 1279 Site as Structural Convergence](#the-1279-site-as-structural-convergence)
@@ -22,7 +22,7 @@
     - [3. Self-Replicating Structures](#3-self-replicating-structures)
   - [Mathematical Significance](#mathematical-significance)
     - [The Complete Framework](#the-complete-framework)
-    - [From Poetry to Biology](#from-poetry-to-biology)
+    - [From Intuition to Mathematical Rigor](#from-intuition-to-mathematical-rigor)
   - [Conclusion](#conclusion)
 
 <!-- mdformat-toc end -->
@@ -38,7 +38,7 @@ We have discovered and rigorously validated a **fundamental structural architect
 The modular system exhibits three complementary mathematical structures:
 
 - **Pascal Triangle View**: Area-based geometric analysis where dimensional openings create imbalance cells
-- **Quaternion View**: Solid angle and holonomy analysis measuring phase coherence through rotor chains  
+- **Quaternion View**: Solid angle and holonomy analysis measuring phase coherence through rotor chains
 - **Kernel View**: Second moment analysis using Taylor expansion and symmetry breaking
 
 ### 🔬 Mathematical Foundation<a name="%F0%9F%94%AC-mathematical-foundation"></a>

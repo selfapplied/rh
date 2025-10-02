@@ -22,8 +22,9 @@
 This directory contains the mathematical foundation for the complete proof of the Riemann Hypothesis through critical hat theory and Li-Stieltjes transforms.
 
 The proof uses two main approaches:
+
 1. **Critical Hat Theory**: Kernel-based approach to Li-Keiper positivity criterion
-2. **Li-Stieltjes Transform**: Rigorous connection between computational and theoretical components
+1. **Li-Stieltjes Transform**: Rigorous connection between computational and theoretical components
 
 ## Essential Proof Components<a name="essential-proof-components"></a>
 
@@ -32,11 +33,13 @@ The proof uses two main approaches:
 **These 2 theorems form the complete proof:**
 
 1. **[Li-Stieltjes Transform Theorem](theorems/li_stieltjes_transform_theorem.md)**
+
    - **What it does**: Proves Li generating function is Stieltjes transform of positive measure
    - **Why essential**: Establishes rigorous connection between computational kernel moments and theoretical Li coefficients
    - **Key Result**: Hankel matrix positivity is automatic by Stieltjes moment theorem
 
-2. **[Critical Hat Existence Theorem](theorems/critical_hat_existence_theorem.md)**
+1. **[Critical Hat Existence Theorem](theorems/critical_hat_existence_theorem.md)**
+
    - **What it does**: Proves existence and provides construction of critical hat configuration
    - **Why essential**: Provides the specific kernel parameters that produce PSD Hankel matrices
    - **Key Result**: θ⋆ = (4.7108180498, 2.3324448344) found and verified
@@ -46,14 +49,17 @@ The proof uses two main approaches:
 **These 3 lemmas provide the supporting foundation:**
 
 1. **[Weil Positivity Criterion](lemmas/weil_positivity_criterion.md)**
+
    - **What it does**: Connects explicit formula positivity to Riemann Hypothesis
    - **Why essential**: Provides the final step from positivity to RH conclusion
 
-2. **[Nyman-Beurling Completeness](lemmas/nyman_beurling_completeness.md)**
+1. **[Nyman-Beurling Completeness](lemmas/nyman_beurling_completeness.md)**
+
    - **What it does**: Establishes completeness of test functions for explicit formula
    - **Why essential**: Ensures the explicit formula applies to all relevant functions
 
-3. **[Li Coefficient Positivity](lemmas/li_coefficient_positivity.md)**
+1. **[Li Coefficient Positivity](lemmas/li_coefficient_positivity.md)**
+
    - **What it does**: Links Li coefficients to Hankel matrix positivity
    - **Why essential**: Connects computational verification to theoretical proof
 
@@ -70,17 +76,20 @@ The proof includes computational verification of the critical hat configuration:
 ## Reading Order<a name="reading-order"></a>
 
 **For understanding the RH proof:**
+
 1. Start with [`proof.md`](../proof.md) for the complete proof chain
-2. Read [Li-Stieltjes Transform Theorem](theorems/li_stieltjes_transform_theorem.md)
-3. Read [Critical Hat Existence Theorem](theorems/critical_hat_existence_theorem.md)
-4. Review the computational verification in `code/riemann/crithat.py`
+1. Read [Li-Stieltjes Transform Theorem](theorems/li_stieltjes_transform_theorem.md)
+1. Read [Critical Hat Existence Theorem](theorems/critical_hat_existence_theorem.md)
+1. Review the computational verification in `code/riemann/crithat.py`
 
 **For exploring the complete framework:**
+
 - See [`unused/`](unused/) directory for additional theorems and lemmas that were developed but not used in the final proof
 
 ## Additional Materials<a name="additional-materials"></a>
 
 **Unused but interesting materials** (see [`unused/`](unused/) directory):
+
 - Alternative proof approaches (Coset-LU, Modular Protein Architecture)
 - Additional lemmas and theorems developed during investigation
 - Supporting mathematical frameworks not used in final proof

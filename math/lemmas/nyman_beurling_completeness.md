@@ -10,6 +10,7 @@
   - [Mathematical Insight](#mathematical-insight)
   - [Computational Details](#computational-details)
   - [References](#references)
+    - [Nyman-Beurling Theory](#nyman-beurling-theory)
 
 <!-- mdformat-toc end -->
 

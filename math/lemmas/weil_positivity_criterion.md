@@ -21,7 +21,10 @@
     - [Prime Side Convergence](#prime-side-convergence)
     - [Positivity Verification](#positivity-verification)
   - [No-Go Checks](#no-go-checks)
-  - [Next Steps](#next-steps)
+  - [Implementation Status](#implementation-status)
+  - [References](#references)
+    - [Weil Explicit Formula & Positivity](#weil-explicit-formula--positivity)
+    - [Alternative RH Equivalents](#alternative-rh-equivalents)
 
 <!-- mdformat-toc end -->
 
