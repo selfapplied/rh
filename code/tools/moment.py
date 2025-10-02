@@ -15,10 +15,8 @@ import time
 from dataclasses import dataclass
 from typing import Any, Dict, List, Tuple
 
-
-
 # Import our computational framework
-from code.riemann.analysis.rh_analyzer import RHIntegerAnalyzer
+from riemann.analysis.rh_analyzer import RHIntegerAnalyzer
 
 
 @dataclass

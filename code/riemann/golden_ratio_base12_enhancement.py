@@ -20,6 +20,7 @@ from typing import Any, Dict, List, Optional
 
 from color_quaternion_ce1_integration import LivingDocumentAtmosphere
 
+
 # Import our existing systems
 
 

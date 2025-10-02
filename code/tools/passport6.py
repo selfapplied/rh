@@ -245,7 +245,7 @@ def main():
     stamp_results = None
     if args.with_proof and args.domain == "riemann_hypothesis":
         # Use our proven RH stamps
-        from unlock_proof import ProofUnlockStamper, create_proof_unlock_params
+        from tools.unlock import ProofUnlockStamper, create_proof_unlock_params
         
         print("Generating proof stamps...")
         params = create_proof_unlock_params()

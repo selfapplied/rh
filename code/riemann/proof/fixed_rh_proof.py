@@ -13,6 +13,7 @@ import sys
 from dataclasses import dataclass
 from typing import Dict, List
 
+from mathematical_foundations import MathematicalProof, RealMathematicalProofs
 
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -21,7 +22,6 @@ from real_mathematical_constants import (
     RealMathematicalComputer,
     RealMathematicalConstants,
 )
-from real_mathematical_proofs import MathematicalProof, RealMathematicalProofs
 from real_zeta_connection import RealZetaConnection, ZetaFunctionData
 
 

@@ -6,13 +6,19 @@ This module provides symbolic verification of the Stieltjes representation
 lemmas, with interval arithmetic for rigorous bounds.
 """
 
-import sympy as sp
-from sympy import symbols, integrate, diff, simplify, expand, factor
-from sympy import exp, cos, log, pi, oo, I
-from sympy import Interval, Rational
-from typing import Dict, List, Tuple, Any
-import numpy as np
 from dataclasses import dataclass
+from typing import Dict, List
+
+from sympy import (
+    Interval,
+    cos,
+    diff,
+    exp,
+    integrate,
+    log,
+    oo,
+    symbols,
+)
 
 
 @dataclass

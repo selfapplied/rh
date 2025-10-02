@@ -14,7 +14,6 @@ from enum import Enum
 from typing import Any, Dict, List
 
 
-
 class OperationType(Enum):
     """Types of mathematical operations."""
     SERIES_SUMMATION = "series_summation"

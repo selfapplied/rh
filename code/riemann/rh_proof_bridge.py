@@ -11,10 +11,9 @@ import sys
 from typing import Dict, List
 
 
-
 # Import our bridge algorithm
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from mathematical_bridge_algorithm import (
+from riemann.bridge import (
     MathematicalBridgeAlgorithm,
     ProofComponent,
     ProofComponentType,

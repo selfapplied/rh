@@ -13,8 +13,8 @@ import random
 import subprocess
 import time
 
-from stamp_cert import write_stamped_toml
-from stamps import CertificationStamper
+from riemann.verification.validation import CertificationStamper
+from tools.certification.stamp_cert import write_stamped_toml
 
 
 def get_git_revision():

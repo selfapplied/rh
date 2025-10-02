@@ -11,8 +11,8 @@ import os
 import random
 import time
 
-from stamp_cert import write_stamped_toml
-from stamps import CertificationStamper
+from riemann.verification.validation import CertificationStamper
+from tools.certification.stamp_cert import write_stamped_toml
 
 
 def create_ramanujan_control_params():

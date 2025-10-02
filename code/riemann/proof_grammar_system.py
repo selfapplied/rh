@@ -12,7 +12,6 @@ from enum import Enum
 from typing import Any, Dict, List, Optional
 
 
-
 class ProofElement(Enum):
     """Types of proof elements."""
     DEFINITION = "definition"

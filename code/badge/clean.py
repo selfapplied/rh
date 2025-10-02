@@ -14,7 +14,7 @@ import hashlib
 import os
 import time
 
-from unlock_proof import ProofUnlockStamper, create_proof_unlock_params
+from tools.unlock import ProofUnlockStamper, create_proof_unlock_params
 
 
 def create_clean_passport_svg(stamp_results: dict, params: dict, output_path: str) -> None:

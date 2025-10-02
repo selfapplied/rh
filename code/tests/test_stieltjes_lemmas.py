@@ -6,17 +6,18 @@ This module provides assertions that map code ↔ statement for the
 Stieltjes representation lemmas.
 """
 
-import pytest
-import numpy as np
-from sympy import symbols, diff, integrate, exp, cos, log, oo
-from typing import Dict, List, Tuple, Any
-import sys
 import os
+import sys
+
+import numpy as np
+import pytest
+from sympy import cos, exp, symbols
+
 
 # Add the proofs directory to the path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'proofs'))
 
-from stieltjes_proof import StieltjesProofHarness, ProofResult
+from proofs.stieltjes_proof import ProofResult, StieltjesProofHarness
 
 
 class TestStieltjesLemmas:

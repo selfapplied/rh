@@ -21,7 +21,8 @@ from typing import Callable, Dict, List, Optional, Tuple, Union
 
 import numpy as np
 import scipy.signal
-from convolution_time_springs import (
+
+from riemann.convolution_time_springs import (
     create_hamiltonian_spring_kernel,
 )
 

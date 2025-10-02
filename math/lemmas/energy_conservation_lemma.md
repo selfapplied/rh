@@ -1,8 +1,8 @@
-# Energy Conservation Lemma: Modular Protein to Spectral Analysis<a name="energy-conservation-lemma-modular-protein-to-spectral-analysis"></a>
+# Spectral Energy Conservation Lemma: Modular Arithmetic to Explicit Formula<a name="spectral-energy-conservation-lemma-modular-arithmetic-to-explicit-formula"></a>
 
 <!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
 
-- [Energy Conservation Lemma: Modular Protein to Spectral Analysis](#energy-conservation-lemma-modular-protein-to-spectral-analysis)
+- [Spectral Energy Conservation Lemma: Modular Arithmetic to Explicit Formula](#spectral-energy-conservation-lemma-modular-arithmetic-to-explicit-formula)
   - [Statement](#statement)
   - [Mathematical Framework](#mathematical-framework)
     - [Energy Conservation Mechanism](#energy-conservation-mechanism)
@@ -21,21 +21,21 @@
 
 ## Statement<a name="statement"></a>
 
-**Lemma (Energy Conservation Through Modular Protein Architecture):** The α/β interplay in the modular protein structure provides sufficient energy conservation to establish positivity of the explicit formula $Q(\\varphi) = A\_\\infty(\\varphi) - \\mathcal{P}(\\varphi)$.
+**Lemma (Spectral Energy Conservation Through Modular Arithmetic):** The dimensional opening/torsion operator interplay in the modular arithmetic structure provides sufficient energy conservation to establish positivity of the explicit formula $Q(\\varphi) = A\_\\infty(\\varphi) - \\mathcal{P}(\\varphi)$.
 
 ## Mathematical Framework<a name="mathematical-framework"></a>
 
 ### Energy Conservation Mechanism<a name="energy-conservation-mechanism"></a>
 
-**β-Pleat Energy Storage**: Each dimensional opening $2^k \\mid (\\delta A + \\gamma)$ acts as an energy storage site where:
+**Dimensional Opening Energy Storage**: Each dimensional opening $2^k \\mid (\\delta A + \\gamma)$ acts as an energy storage site where:
 
-$$\\mathcal{E}_{\\text{pleat}}(A) = \\sum_{B \\in \\text{Pleat}(A)} |g(A,B)|^2 \\cdot \\mathbf{1}\_{{g(A,B) \\equiv 0 \\text{ or } 255 \\pmod{256}}}$$
+$$\\mathcal{E}_{\\text{opening}}(A) = \\sum_{B \\in \\text{Opening}(A)} |g(A,B)|^2 \\cdot \\mathbf{1}\_{{g(A,B) \\equiv 0 \\text{ or } 255 \\pmod{256}}}$$
 
-The pleat energy is **conserved** through mirror seam reflection symmetry.
+The opening energy is **conserved** through mirror seam reflection symmetry.
 
-**α-Spring Energy Transfer**: The torsion operators provide energy transfer:
+**Torsion Operator Energy Transfer**: The torsion operators provide energy transfer:
 
-$$\\mathcal{E}_{\\text{spring}}(A,B) = |\\theta_{A,B}|^2 = |\\omega(\\delta A + \\gamma)(B\_{n+1} - B_n)|^2$$
+$$\\mathcal{E}_{\\text{torsion}}(A,B) = |\\theta_{A,B}|^2 = |\\omega(\\delta A + \\gamma)(B\_{n+1} - B_n)|^2$$
 
 The spring energy maintains **phase coherence** across pleat boundaries.
 

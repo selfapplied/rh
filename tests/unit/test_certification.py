@@ -2,7 +2,7 @@
 """Test the complete RH certification system"""
 
 
-from riemann.analysis import (
+from riemann.analysis.rh_analyzer import (
     BalancedLockingLoss,
 )
 

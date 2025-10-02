@@ -133,11 +133,6 @@ $$\\xi(s) = \\frac{1}{2} s(s-1) \\pi^{-s/2} \\Gamma(s/2) \\zeta(s)$$
 - **Stop if**: Any replacement of explicit formula prime terms by "Pascal factors"
 - **Stop if**: Any claim about "positivity preservation" without kernel theory
 
-## Next Steps<a name="next-steps"></a>
+## Implementation Status<a name="implementation-status"></a>
 
-1. **Choose Module C route**: Weil positivity vs Li vs Nyman-Beurling
-1. **Implement archimedean control**: Compute $A\_{\\infty}(\\varphi)$ explicitly
-1. **Prove prime convergence**: Use Meixner decomposition
-1. **Establish positivity**: Apply kernel theory or equivalence
-
-The proof lives or dies in Module C - this is where to focus next.
+**Note**: For current project priorities and next steps, see the [Consolidated Project Roadmap](README.md#consolidated-project-roadmap) in the main README.

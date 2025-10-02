@@ -27,7 +27,7 @@ from typing import Any, Dict, List
 
 import numpy as np
 
-from code.riemann.analysis.rh_analyzer import (
+from riemann.analysis.rh_analyzer import (
     DihedralAction,
     PascalKernel,
 )

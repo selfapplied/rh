@@ -13,7 +13,7 @@ from typing import Any, Dict, List
 
 # Import our bridge algorithm
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from riemann import MathematicalBridgeAlgorithm
+from riemann.bridge import MathematicalBridgeAlgorithm
 
 
 class DetailedOutputCapture:

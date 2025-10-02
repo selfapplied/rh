@@ -12,8 +12,8 @@ import re
 import time
 from typing import Any, Dict
 
-from code.riemann.analysis.certification import write_toml
-from code.riemann.analysis.validation import CertificationStamper
+from riemann.verification.certification import write_toml
+from riemann.verification.validation import CertificationStamper
 
 
 def find_latest_cert_toml(cert_dir: str = ".out/certs") -> str:

@@ -12,7 +12,7 @@ import itertools
 import os
 import time
 
-from riemann.verification import CertificationStamper
+from riemann.verification.validation import CertificationStamper
 
 
 def test_composition_order(order: list, base_params: dict) -> dict:

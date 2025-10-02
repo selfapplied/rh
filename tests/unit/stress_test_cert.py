@@ -5,8 +5,8 @@ Stress test certification: ≥33 windows + depth=6 to test caps and monotonicity
 
 import argparse
 
-from tools.certification import write_stamped_ce1, write_stamped_toml
-from riemann.verification import CertificationStamper
+from tools.certification.stamp_cert import write_stamped_ce1, write_stamped_toml
+from riemann.verification.validation import CertificationStamper
 
 
 def create_stress_test_params():

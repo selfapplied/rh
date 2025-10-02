@@ -12,7 +12,7 @@ import os
 import time
 import xml.etree.ElementTree as ET
 
-from unlock_proof import ProofUnlockStamper, create_proof_unlock_params
+from tools.unlock import ProofUnlockStamper, create_proof_unlock_params
 
 
 def compute_passport_anchors(nf_sig: str, stamp_data: dict, provenance: dict) -> dict:
@@ -224,7 +224,7 @@ def main():
 
 
 # Import what we need
-from unlock_proof import ProofUnlockStamper, create_proof_unlock_params
+from tools.unlock import ProofUnlockStamper, create_proof_unlock_params
 
 
 if __name__ == "__main__":

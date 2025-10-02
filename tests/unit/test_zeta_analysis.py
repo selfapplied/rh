@@ -3,7 +3,7 @@
 
 import numpy as np
 
-from riemann.analysis import (
+from riemann.analysis.rh_analyzer import (
     GyroscopeLoss,
     PascalKernel,
     QuantitativeGapAnalyzer,

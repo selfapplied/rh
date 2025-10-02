@@ -73,7 +73,7 @@ _check:
 _fix:
 	@echo "Fixing common import and code issues..."
 	@echo "Fixing broken imports using advanced tool..."
-	python .working/fix_imports.py code/ tools/
+	python tools/fix_imports.py .
 	@echo "Organizing imports (applying changes)..."
 	isort code/ tools/
 	@echo "Removing unused imports and variables (applying changes)..."

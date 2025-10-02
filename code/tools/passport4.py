@@ -11,7 +11,6 @@ import argparse
 import xml.etree.ElementTree as ET
 
 
-
 def enhance_passport_with_symbols(input_svg: str, output_svg: str) -> None:
     """Enhance passport by adding lit-up symbols beside stamps."""
     

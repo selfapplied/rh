@@ -14,7 +14,6 @@ from dataclasses import dataclass
 from typing import Dict, List
 
 
-
 @dataclass
 class ProofTheorem:
     """A theorem in the RH proof."""

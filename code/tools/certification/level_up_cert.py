@@ -5,8 +5,8 @@ Level-up certification: depth=5, N=33, extended zeros for stronger statistics.
 
 import argparse
 
-from stamp_cert import write_stamped_ce1, write_stamped_toml
-from stamps import CertificationStamper
+from riemann.verification.validation import CertificationStamper
+from tools.certification.stamp_cert import write_stamped_ce1, write_stamped_toml
 
 
 def create_level_up_params():

@@ -11,8 +11,8 @@ import argparse
 import os
 import time
 
-from stamp_cert import write_stamped_ce1
-from stamps import CertificationStamper
+from riemann.verification.validation import CertificationStamper
+from tools.certification.stamp_cert import write_stamped_ce1
 
 
 def create_proof_unlock_params():
@@ -157,7 +157,7 @@ def main():
 
 
 # Import the class we need to modify
-from stamps import LineLockStamp
+from riemann.verification.validation import LineLockStamp
 
 
 if __name__ == "__main__":

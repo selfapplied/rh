@@ -31,6 +31,7 @@ from visualization.color_quaternion_3_5d_theory import (
     TemporalColorComponent,
 )
 
+
 # Import base systems
 
 

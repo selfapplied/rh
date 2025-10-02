@@ -166,15 +166,9 @@ The geometric structure connects to:
 - **Mathematical lemma**: `math/lemmas/byte_edge_chirality_lemma.md`
 - **Validation results**: This document
 
-## Next Steps<a name="next-steps"></a>
+## Implementation Status<a name="implementation-status"></a>
 
-### 1. Real Data Integration<a name="1-real-data-integration"></a>
-
-Apply the validation tests to the actual 1279 cluster data from the dimensional openings analysis to determine the precise torus map coefficients.
-
-### 2. Prime Detection Algorithm<a name="2-prime-detection-algorithm"></a>
-
-Develop the Toeplitz/Prony pipeline using the dimensional opening as a trigger mechanism.
+**Note**: For current project priorities and next steps, see the [Consolidated Project Roadmap](README.md#consolidated-project-roadmap) in the main README.
 
 ### 3. Extended Analysis<a name="3-extended-analysis"></a>
 

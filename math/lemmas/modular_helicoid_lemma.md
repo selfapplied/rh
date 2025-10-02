@@ -1,8 +1,8 @@
-# Modular Helicoid Lemma: α-Springs and β-Pleats in Arithmetic Space<a name="modular-helicoid-lemma-%CE%B1-springs-and-%CE%B2-pleats-in-arithmetic-space"></a>
+# Modular Lattice Structure Lemma: Torsion Operators and Dimensional Openings in Arithmetic Space<a name="modular-lattice-structure-lemma-torsion-operators-and-dimensional-openings-in-arithmetic-space"></a>
 
 <!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
 
-- [Modular Helicoid Lemma: α-Springs and β-Pleats in Arithmetic Space](#modular-helicoid-lemma-%CE%B1-springs-and-%CE%B2-pleats-in-arithmetic-space)
+- [Modular Lattice Structure Lemma: Torsion Operators and Dimensional Openings in Arithmetic Space](#modular-lattice-structure-lemma-torsion-operators-and-dimensional-openings-in-arithmetic-space)
   - [Statement](#statement)
   - [Mathematical Framework](#mathematical-framework)
     - [β-Pleats as Curvature Discontinuities](#%CE%B2-pleats-as-curvature-discontinuities)
@@ -28,16 +28,16 @@
 
 ## Statement<a name="statement"></a>
 
-**Lemma (Modular Helicoid Structure):** Let $g: \\mathbb{Z} \\times \\mathbb{Z} \\to \\mathbb{Z}/256\\mathbb{Z}$ be the affine-bilinear torus map
+**Lemma (Modular Lattice Structure):** Let $g: \\mathbb{Z} \\times \\mathbb{Z} \\to \\mathbb{Z}/256\\mathbb{Z}$ be the affine-bilinear torus map
 
 $$g(A,B) \\equiv \\delta AB + \\beta A + \\gamma B + \\alpha \\pmod{256}$$
 
-The modular system exhibits a **helicoid structure** composed of two complementary geometric elements:
+The modular system exhibits a **lattice structure** composed of two complementary geometric elements:
 
-1. **β-Pleats**: Discrete reflection seams where $2^k \\mid (\\delta A + \\gamma)$, creating curvature discontinuities
-1. **α-Springs**: Oscillatory torsion operators that thread the pleats, maintaining phase coherence
+1. **Dimensional Openings**: Discrete reflection seams where $2^k \\mid (\\delta A + \\gamma)$, creating curvature discontinuities
+1. **Torsion Operators**: Oscillatory coupling terms that thread the openings, maintaining phase coherence
 
-**Corollary (Torsion-Stabilized Lattice):** The α/β interplay produces a self-balancing modular lattice where pleats define the folding pattern and springs define the tension that keeps the folds open but not torn.
+**Corollary (Torsion-Stabilized Lattice):** The dimensional opening/torsion operator interplay produces a self-balancing modular lattice where openings define the folding pattern and torsion operators define the tension that keeps the folds open but not torn.
 
 ## Mathematical Framework<a name="mathematical-framework"></a>
 

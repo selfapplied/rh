@@ -27,7 +27,7 @@ from typing import Any, Dict, List
 
 import numpy as np
 
-from code.riemann.analysis.rh_analyzer import PascalKernel
+from riemann.analysis.rh_analyzer import PascalKernel
 
 
 @dataclass

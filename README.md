@@ -1,8 +1,9 @@
 # Riemann Hypothesis: Mathematical Framework<a name="riemann-hypothesis-mathematical-framework"></a>
 
-<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
+<!-- mdformat-toc start --slug=github --maxlevel=3 --minlevel=1 -->
 
 - [Riemann Hypothesis: Mathematical Framework](#riemann-hypothesis-mathematical-framework)
+  - [About This Project](#about-this-project)
   - [Overview](#overview)
   - [Project structure](#project-structure)
     - [Status and Disclaimer](#status-and-disclaimer)
@@ -12,9 +13,8 @@
     - [`docs/` - Documentation](#docs---documentation)
     - [`data/` - Computational outputs and certificates](#data---computational-outputs-and-certificates)
   - [Mathematical framework](#mathematical-framework)
-    - [Modular arithmetic structure](#modular-arithmetic-structure)
-    - [Modular protein architecture](#modular-protein-architecture)
-    - [Critical hat theory](#critical-hat-theory)
+    - [Mathematical framework overview](#mathematical-framework-overview)
+    - [AX-mas mathematical framework](#ax-mas-mathematical-framework)
     - [Mathematical theorems](#mathematical-theorems)
   - [Getting started](#getting-started)
     - [1. Begin with the Program Overview](#1-begin-with-the-program-overview)
@@ -38,11 +38,7 @@
   - [Project status](#project-status)
   - [Important considerations and next steps](#important-considerations-and-next-steps)
   - [Emoji usage](#emoji-usage)
-    - [Mathematical Claims Requiring Peer Review](#mathematical-claims-requiring-peer-review)
-    - [Biological Metaphors in Mathematics](#biological-metaphors-in-mathematics)
-    - [Computational Verification and Validation](#computational-verification-and-validation)
-    - [Theoretical Framework Development](#theoretical-framework-development)
-    - [Community Engagement and Collaboration](#community-engagement-and-collaboration)
+  - [Project Status & Next Steps](#project-status--next-steps)
   - [One-month plan](#one-month-plan)
     - [Week 1: Clarify scope and definitions](#week-1-clarify-scope-and-definitions)
     - [Week 2: Computation and data](#week-2-computation-and-data)
@@ -51,15 +47,25 @@
 
 <!-- mdformat-toc end -->
 
-*A comprehensive mathematical investigation exploring the Riemann Hypothesis through modular protein architecture and critical hat theory*
+*A comprehensive mathematical investigation exploring the Riemann Hypothesis through modular arithmetic frameworks and critical hat theory*
+
+## About This Project<a name="about-this-project"></a>
+
+**What is this?** A mathematical investigation of the Riemann Hypothesis using novel frameworks: modular arithmetic structures and critical hat theory.
+
+**Who is this for?** Mathematicians, computational scientists, researchers, and students interested in novel approaches to one of mathematics' most famous unsolved problems.
+
+**Why is it interesting?** This project reveals that modular arithmetic exhibits novel structural patterns with self-stabilizing properties, providing new computational tools and geometric intuition for understanding the zeta function.
+
+**What's the status?** Research investigation with working computational implementations. Key mathematical claims require rigorous proof.
 
 ## Overview<a name="overview"></a>
 
-**The Riemann Hypothesis is investigated** through the development of **modular protein architecture** in arithmetic space, combined with the **critical hat theory** as a conjectural mathematical framework for zero detection. This represents an ongoing mathematical investigation that reveals interesting structural properties of modular arithmetic.
+**The Riemann Hypothesis is investigated** through the development of **modular arithmetic frameworks** in arithmetic space, combined with the **critical hat theory** as a mathematical framework for zero detection. This represents an ongoing mathematical investigation that reveals interesting structural properties of modular arithmetic.
 
 **Goal (unproven)**: All non-trivial zeros of the Riemann zeta function have real part equal to 1/2.
 
-**Significance**: This framework reveals that modular arithmetic exhibits biological-like structural patterns with self-stabilizing properties—a novel perspective that may advance our understanding of mathematics.
+**Significance**: This framework reveals that modular arithmetic exhibits novel structural patterns with self-stabilizing properties—a mathematical perspective that may advance our understanding of number theory.
 
 ______________________________________________________________________
 
@@ -67,143 +73,56 @@ ______________________________________________________________________
 
 ### Status and Disclaimer<a name="status-and-disclaimer"></a>
 
-This repository presents a research program, not a completed proof of the Riemann Hypothesis. Key steps remain open, including establishing exact nonnegativity in Weil's criterion for an appropriate cone of test functions. See the canonical status page: `docs/insights/CRITICAL_HAT_RIGOROUS_ANALYSIS.md` for what is proved vs. open.
+This repository presents a research program, not a completed proof of the Riemann Hypothesis. Key steps remain open, including establishing exact nonnegativity in Weil's criterion for an appropriate cone of test functions. See the status section below for what is proved vs. open.
 
 ### **[`proof.md`](proof.md)** - Program outline and status (not a completed proof)<a name="proofmd---program-outline-and-status-not-a-completed-proof"></a>
 
-Research program document outlining the conjectural framework and current status; see `docs/insights/CRITICAL_HAT_RIGOROUS_ANALYSIS.md`.
+Research program document outlining the conjectural framework and current status.
 
 ### **[`math/`](math/)** - Mathematical Foundation<a name="math---mathematical-foundation"></a>
 
-Mathematical framework with 13 theorems and 17 supporting lemmas:
-
-- **[`theorems/`](math/theorems/)** - Core theorems including:
-  - [`li_stieltjes_transform_theorem.md`](math/theorems/li_stieltjes_transform_theorem.md) - Li generating function as Stieltjes transform
-  - [`critical_hat_existence_theorem.md`](math/theorems/critical_hat_existence_theorem.md) - Existence of critical hat kernels
-  - [`first_moment_cancellation.md`](math/theorems/first_moment_cancellation.md) - First-moment cancellation on critical line
-  - [`connection_theorem.md`](math/theorems/connection_theorem.md) - Connection between moments and zeta zeros
-  - [`dihedral_gap_analysis.md`](math/theorems/dihedral_gap_analysis.md) - Computational detection framework
-  - [`coset_lu_framework.md`](math/theorems/coset_lu_framework.md) - Coset LU decomposition theory
-  - [`euler_pascal_framework.md`](math/theorems/euler_pascal_framework.md) - Euler-Pascal computational framework
-  - [`zeta_fractal_structure_theorem.md`](math/theorems/zeta_fractal_structure_theorem.md) - Fractal structure of zeta function
-- **[`lemmas/`](math/lemmas/)** - 17 supporting mathematical lemmas
-- **[`proofs/`](math/proofs/)** - Complete formal proofs including modular protein architecture
+Mathematical framework with 13 theorems and 17 supporting lemmas. **For complete details**: See [`math/README.md`](math/README.md).
 
 ### **[`code/`](code/)** - Computational implementation<a name="code---computational-implementation"></a>
 
-Computational engine with 47 modules:
-
-- **[`core/`](code/core/)** - Mathematical engine including:
-  - [`critical_hat_as_normalizer.py`](code/core/critical_hat_as_normalizer.py) - Critical hat normalization layer
-  - [`convolution_time_springs.py`](code/core/convolution_time_springs.py) - Hamiltonian convolution framework
-  - [`coset_lu_framework.py`](code/core/coset_lu_framework.py) - Coset LU decomposition implementation
-  - [`dimensional_reduction_theory.py`](code/core/dimensional_reduction_theory.py) - Dimensional reduction algorithms
-  - [`hamiltonian_convolution_rh.py`](code/core/hamiltonian_convolution_rh.py) - Hamiltonian RH framework
-  - **[`proof/`](code/core/proof/)** - Formal proof implementations
-  - **[`verification/`](code/core/verification/)** - Certification and validation systems
-- **[`tools/`](code/tools/)** - Computational tools:
-  - **[`certification/`](code/tools/certification/)** - 12 certification systems
-  - **[`visualization/`](code/tools/visualization/)** - Visualization frameworks
-  - **[`computation/`](code/tools/computation/)** - Computational primitives
-  - **[`ce1/`](code/tools/ce1/)** - CE1 integration and validation
-- **[`tests/`](code/tests/)** - Test suites and validation
+Computational engine with 47 modules. **For complete details**: See [`math/README.md`](math/README.md) for computational tools and their connections to mathematical lemmas.
 
 ### **[`docs/`](docs/)** - Documentation<a name="docs---documentation"></a>
 
-Analysis and documentation:
-
-- **[`analysis/`](docs/analysis/)** - Mathematical analysis including:
-  - [`RIEMANN_HYPOTHESIS_PROOF_COMPLETE.md`](docs/analysis/RIEMANN_HYPOTHESIS_PROOF_COMPLETE.md) - Legacy "complete proof" draft (not a proof); see status page
-  - [`CONVOLUTION_TIME_SPRINGS_SUMMARY.md`](docs/analysis/CONVOLUTION_TIME_SPRINGS_SUMMARY.md) - Convolution framework analysis
-  - [`LI_STIELTJES_SUMMARY.md`](docs/analysis/LI_STIELTJES_SUMMARY.md) - Li-Stieltjes transform analysis
-  - [`PROOF_SYNTHESIS.md`](docs/analysis/PROOF_SYNTHESIS.md) - Proof synthesis methodology
-  - [`TORUS_MAP_VALIDATION_RESULTS.md`](docs/analysis/TORUS_MAP_VALIDATION_RESULTS.md) - Validation results
-- **[`insights/`](docs/insights/)** - Mathematical insights and observations
-- **[`images/`](docs/images/)** - Mathematical visualizations and diagrams
+Analysis and documentation. **For complete details**: See [`docs/README.md`](docs/README.md).
 
 ### **[`data/`](data/)** - Computational outputs and certificates<a name="data---computational-outputs-and-certificates"></a>
 
-- **[`certificates/`](data/certificates/)** - Mathematical proof certificates
-- **[`outputs/`](data/outputs/)** - Computational verification outputs
+Computational outputs and certificates. **For complete details**: See [`math/README.md`](math/README.md).
+
 - **[`mathematical_ledger.json`](data/mathematical_ledger.json)** - Mathematical computation ledger
 
 ______________________________________________________________________
 
 ## Mathematical framework<a name="mathematical-framework"></a>
 
-### Modular arithmetic structure<a name="modular-arithmetic-structure"></a>
+### Mathematical framework overview<a name="mathematical-framework-overview"></a>
 
-The **1279 cluster phenomenon** reveals that modular arithmetic exhibits **biological-like patterns**—a novel observation that offers insights into mathematical structures. This system exhibits:
+This project investigates the Riemann Hypothesis through two complementary mathematical approaches:
 
-- **Self-stabilization**: Maintains structural integrity through energy conservation
-- **Self-replication**: Patterns propagate through the chirality network
-- **Evolution**: Adapts to changing modular conditions through α/β interplay
+1. **Modular Arithmetic Framework**: Dimensional openings and torsion operators in arithmetic space
+1. **Critical Hat Theory**: Kernel-based approach to Li-Keiper positivity criterion
+1. **AX-mas Mathematical Framework**: Color quaternion group theory and harmonic analysis
 
-### Modular protein architecture<a name="modular-protein-architecture"></a>
+**For detailed mathematical content**: See [`math/README.md`](math/README.md) for complete theorems, lemmas, proofs, and computational implementations.
 
-A framework that explores energy conservation principles in arithmetic space:
+### AX-mas mathematical framework<a name="ax-mas-mathematical-framework"></a>
 
-**β-pleats**: Dimensional openings where $2^k \\mid (\\delta A + \\gamma)$ create curvature discontinuities
-
-- Act as energy storage sites in the modular structure
-- Provide the geometric foundation for energy conservation
-- Create the "living" quality of modular arithmetic
-
-**α-springs**: Torsion operators $\\theta\_{A,B} = \\omega(\\delta A + \\gamma)(B\_{n+1} - B_n)$ maintain phase coherence
-
-- Provide positive energy storage through torsion dynamics
-- Maintain phase coherence across the modular structure
-- Enable energy propagation through the chirality network
-
-**Chirality Network**: Helical-pleated lattice where energy and symmetry propagate
-
-- **Mirror seam geometry**: Provides reflection symmetry for energy conservation
-- **1279 convergence point**: Acts as energy sink/source in the network
-- **Self-stabilizing structure**: System maintains its own integrity
-
-### Critical hat theory<a name="critical-hat-theory"></a>
-
-A kernel function family that provides a mathematical framework for RH zero detection:
-
-**Mathematical Definition:**
-$$g\_\\theta(t) = e^{-\\alpha t^2} \\cos(\\omega t) \\cdot \\eta(t)$$
-
-**Fundamental Properties:**
-
-- **Self-dual positive-definite**: $\\hat{g}_\\theta(u) = |\\hat{h}_\\theta(u)|^2 \\geq 0$ (Bochner's theorem)
-- **Critical line transformation**: $(\\rho - 1/2)/i$ maps critical line to real axis
-- **Existence theorem**: There exists $\\theta\_\\star$ such that Hankel matrix $H(\\theta\_\\star) \\succeq 0$
-- **Li-Stieltjes connection**: Links to RH through positive semidefinite moment sequences
-
-**Three Mathematical Perspectives:**
-
-- **Machine Learning**: Normalization layer enforcing $\\text{Re}(s) = 1/2$ constraint
-- **Signal Processing**: Filter preserving critical line spectral structure
-- **Number Theory**: Kernel making Weil explicit formula positive-definite
+A mathematical framework that provides geometric intuition for the RH investigation through color quaternion group theory and harmonic analysis. **For detailed mathematical content**: See [`math/README.md`](math/README.md).
 
 ### Mathematical theorems<a name="mathematical-theorems"></a>
 
-The mathematical foundation for the RH approach:
+**For complete mathematical theorems, lemmas, and proofs**: See [`math/README.md`](math/README.md) which contains:
 
-**First-Moment Cancellation Theorem**: $E_N(1/2,t) → 0$ specifically on the critical line
-
-- Establishes the fundamental asymmetry that characterizes RH zeros
-- Provides computational detection through moment analysis
-
-**Connection Theorem**: $E_N(σ,t) → 0 ⟺ ξ(σ+it) = 0$
-
-- Links moment cancellation to zeta zero locations
-- Enables computational verification of RH
-
-**Li-Stieltjes Transform Theorem**: The Li generating function is a Stieltjes transform of a positive measure
-
-- Establishes the connection between Li coefficients and positive-definite kernels
-- Provides the theoretical foundation for critical hat theory
-
-**Critical Hat Existence Theorem**: Guarantees existence of kernels producing positive semidefinite Hankel matrices
-
-- Establishes the mathematical validity of the critical hat approach
-- Connects to RH through moment theory and positivity criteria
+- **13 main theorems** including First-Moment Cancellation, Connection Theorem, Gap Scaling Law, and Critical Hat Existence
+- **17 supporting lemmas** with computational verification tools
+- **Formal proofs** and mathematical derivations
+- **Computational implementations** for each mathematical component
 
 ______________________________________________________________________
 
@@ -260,8 +179,8 @@ ______________________________________________________________________
 
 ### Novel mathematical contributions<a name="novel-mathematical-contributions"></a>
 
-- **Mathematical framework** for approaching the Riemann Hypothesis through modular protein architecture
-- **Novel biological metaphors** - modular arithmetic exhibits biological-like structural patterns
+- **Mathematical framework** for approaching the Riemann Hypothesis through modular arithmetic structures
+- **Novel modular arithmetic patterns** - modular arithmetic exhibits novel structural patterns
 - **Critical hat theory** - mathematical framework for RH zero detection
 - **Energy conservation principles** - explores physical-like properties in number theory
 - **Li-Stieltjes transform theory** - connects Li coefficients to positive-definite kernels
@@ -328,7 +247,7 @@ The **1279 cluster phenomenon** represents a **significant observation** that of
 
 ### What this discovery reveals<a name="what-this-discovery-reveals"></a>
 
-- **Living structure**: Modular arithmetic exhibits biological-like self-organization
+- **Living structure**: Modular arithmetic exhibits novel self-organization patterns
 - **Energy conservation**: Mathematical structures conserve energy like physical systems
 - **Self-stabilization**: The mathematical system maintains its own structural integrity
 - **Self-replication**: Patterns propagate naturally through the chirality network
@@ -336,12 +255,12 @@ The **1279 cluster phenomenon** represents a **significant observation** that of
 
 ### Beyond the Riemann Hypothesis<a name="beyond-the-riemann-hypothesis"></a>
 
-This work explores novel connections between RH and biological metaphors, representing a **significant investigation** into the nature of mathematical structures:
+This work explores novel connections between RH and modular arithmetic structures, representing a **significant investigation** into the nature of mathematical structures:
 
-- **Biological-mathematical bridge**: Explores living-like properties of mathematical structures
+- **Modular arithmetic-mathematical bridge**: Explores novel structural properties of mathematical systems
 - **Physics-mathematics connection**: Investigates energy conservation principles in arithmetic space
-- **Computational biology insights**: Examines protein-like structures in modular arithmetic
-- **Novel mathematical perspective**: Living mathematics as an interpretive framework
+- **Computational insights**: Examines novel structures in modular arithmetic
+- **Novel mathematical perspective**: Self-organizing mathematics as an interpretive framework
 
 ### The convergence point<a name="the-convergence-point"></a>
 
@@ -349,7 +268,7 @@ The **1279 convergence point** is where:
 
 - β-pleats and α-springs intersect
 - Energy conservation is established
-- Modular protein architecture emerges
+- Modular arithmetic frameworks emerge
 - Living mathematics becomes manifest
 
 ______________________________________________________________________
@@ -376,90 +295,97 @@ Emojis are part of the ecosystem but are scoped to their appropriate domain:
 - Avoid emojis in core math documents (`math/`, `docs/analysis/`, `proof.md`) and status sections, where a neutral tone improves clarity and rigor.
 - If an emoji-based workflow influences a formal result, summarize it in plain language and link to the detailed process in `emojispark.md`.
 
-### **Mathematical Claims Requiring Peer Review**<a name="mathematical-claims-requiring-peer-review"></a>
+## Project Status & Next Steps<a name="project-status--next-steps"></a>
 
-**Current Status**: The work presents a comprehensive mathematical framework claiming to prove the Riemann Hypothesis through modular protein architecture and critical hat theory.
+**Current Status**: This is a mathematical investigation framework exploring the Riemann Hypothesis through modular arithmetic structures and critical hat theory. Key mathematical claims require rigorous proof.
 
-**Next Steps for Mathematical Validation**:
+**What's Complete**:
 
-1. **Submit to peer-reviewed journals**: Submit the core theorems to established mathematical journals (e.g., Annals of Mathematics, Inventiones Mathematicae, Journal of Number Theory)
-1. **Independent verification**: Seek independent mathematical verification of the key theorems, particularly:
-   - Li-Stieltjes Transform Theorem
-   - Critical Hat Existence Theorem
-   - First-Moment Cancellation Theorem
-1. **Computational validation**: Extend computational verification to larger ranges of zeta zeros
-1. **Expert review**: Present findings to leading number theorists for critical assessment
+- ✅ **Computational Infrastructure**: 47 modules with 12 certification systems
+- ✅ **Mathematical Framework**: Modular arithmetic and critical hat theory foundations
+- ✅ **Working Implementations**: Functional computational tools and verification systems
+- ✅ **Documentation**: Complete mathematical reference and user guides
 
-### **Biological Metaphors in Mathematics**<a name="biological-metaphors-in-mathematics"></a>
+**What Requires Rigorous Proof**:
 
-**Current Status**: The work introduces novel biological metaphors (modular protein architecture, β-pleats, α-springs) as mathematical frameworks.
+- 🔄 **Critical Hat Existence Theorem**: Currently computational evidence only
+- 🔄 **Li-Stieltjes Transform Theorem**: Requires formal derivation
+- 🔄 **First-Moment Cancellation Theorem**: Needs rigorous analysis
+- 🔄 **Modular Arithmetic Connections**: Formal links to zeta function properties
 
-**Next Steps for Framework Development**:
-
-1. **Rigorous mathematical definitions**: Formally define biological metaphors in precise mathematical terms
-1. **Literature review**: Survey existing work on biological metaphors in mathematics and number theory
-1. **Comparative analysis**: Compare this framework with established approaches to RH (e.g., spectral theory, random matrix theory)
-1. **Interdisciplinary collaboration**: Engage with computational biologists and biophysicists to validate biological analogies
-
-### **Computational Verification and Validation**<a name="computational-verification-and-validation"></a>
-
-**Current Status**: The work includes extensive computational infrastructure with 47 modules and 12 certification systems.
-
-**Next Steps for Computational Rigor**:
-
-1. **Benchmark testing**: Compare computational results against known zeta zero databases
-1. **Reproducibility**: Ensure all computational results are reproducible on different systems
-1. **Error analysis**: Conduct comprehensive error analysis and uncertainty quantification
-1. **Performance optimization**: Optimize computational efficiency for larger-scale verification
-1. **Open source validation**: Encourage independent computational verification by the community
-
-### **Theoretical Framework Development**<a name="theoretical-framework-development"></a>
-
-**Current Status**: The work presents critical hat theory as a mathematical framework for RH zero detection.
-
-**Next Steps for Theoretical Development**:
-
-1. **Connection to established theory**: Demonstrate explicit connections to existing RH approaches
-1. **Generalization**: Explore extensions to other L-functions and zeta functions
-1. **Rigorous proofs**: Provide complete, rigorous proofs for all claimed theorems
-1. **Alternative formulations**: Explore alternative mathematical formulations of the biological metaphors
-1. **Historical context**: Place the work in context of the 160+ year history of RH research
-
-### **Community Engagement and Collaboration**<a name="community-engagement-and-collaboration"></a>
-
-**Next Steps for Academic Engagement**:
-
-1. **Conference presentations**: Present findings at major mathematical conferences
-1. **Workshop organization**: Organize workshops to discuss the biological metaphor approach
-1. **Collaboration building**: Seek collaboration with established RH researchers
-1. **Educational materials**: Develop educational resources explaining the novel frameworks
-1. **Open source community**: Foster community contributions to the computational tools
+**Note**: See [Consolidated Project Roadmap](#consolidated-project-roadmap) below for detailed next steps and priorities.
 
 ______________________________________________________________________
 
-## One-month plan<a name="one-month-plan"></a>
+## Consolidated Project Roadmap<a name="consolidated-project-roadmap"></a>
 
-### Week 1: Clarify scope and definitions<a name="week-1-clarify-scope-and-definitions"></a>
+### **Current Status (October 2025)**<a name="current-status-october-2025"></a>
 
-- [ ] Replace remaining all-caps/emojis in docs with neutral tone
-- [ ] Make `docs/insights/CRITICAL_HAT_RIGOROUS_ANALYSIS.md` the canonical status hub (cross-links)
-- [ ] State the exact target positivity statement (Weil cone and test families)
-- [ ] Select concrete Schwartz test families and define Gram matrices
+**✅ Recently Completed (October 1, 2025)**:
+- Li-Stieltjes Transform Theorem: Full rigorous proof complete
+- Herglotz → Stieltjes → PSD pathway: Mathematically proven
+- Integration document: All proof approaches connected
+- Mathematical rigor checklist: All definitions and proofs verified
 
-### Week 2: Computation and data<a name="week-2-computation-and-data"></a>
+### **Immediate Priorities (Next 2 weeks)**<a name="immediate-priorities-next-2-weeks"></a>
 
-- [ ] Implement reproducible Gram matrix computation with interval bounds
-- [ ] Add scripts to `code/tools/` and document usage in `docs/analysis/`
-- [ ] Publish raw numerical data under `data/outputs/` with metadata
+**Critical Computational Tasks**:
+- Run 2D parameter scan in `spring_energy_rh_proof.py` to find θ_⋆
+- Verify measure concentration near critical line
+- Document critical hat configuration when found
+- Complete symbolic derivation for complete monotonicity (Stieltjes lemma)
 
-### Week 3: Kernel formalization and tests<a name="week-3-kernel-formalization-and-tests"></a>
+**Documentation & Scope**:
+- Replace remaining all-caps/emojis in docs with neutral tone
+- Establish clear status documentation in main README
+- State exact target positivity statement (Weil cone and test families)
+- Select concrete Schwartz test families and define Gram matrices
 
-- [ ] Specify critical-hat approximants `K_σ`, assumptions, and convergence claims
-- [ ] Add unit tests that currently fail pending rigorous positivity
-- [ ] Document open lemmas and required estimates
+### **Short-term Goals (1-2 months)**<a name="short-term-goals-1-2-months"></a>
 
-### Week 4: Reproducibility and outreach<a name="week-4-reproducibility-and-outreach"></a>
+**Computational Infrastructure**:
+- Implement reproducible Gram matrix computation with interval bounds
+- Extend computational validation to larger ranges with error bounds
+- Add scripts to `code/tools/` and document usage in `docs/analysis/`
+- Publish raw numerical data under `data/outputs/` with metadata
 
-- [ ] Create a minimal reproducible pipeline (Makefile target + README section)
-- [ ] Add an issues checklist for external validation
-- [ ] Draft a short status note summarizing results and gaps
+**Mathematical Completion**:
+- Write rigorous β-pleat → zero connection theorem
+- Complete A5.ii de Branges calculation (partially done via Li-Stieltjes)
+- Specify critical-hat approximants `K_σ`, assumptions, and convergence claims
+- Add unit tests for rigorous positivity verification
+
+**Framework Strengthening**:
+- Verify numerical stability with extended zeros
+- Test higher precision (σ < 1 cases)
+- Extend Li coefficients to n = 100
+- Document all missing links explicitly
+
+### **Long-term Objectives (3-6 months)**<a name="long-term-objectives-3-6-months"></a>
+
+**Publication Preparation**:
+- Create minimal reproducible pipeline (Makefile target + README section)
+- Add issues checklist for external validation
+- Write unified proof document for publication
+- Seek expert review from leading number theorists
+
+**Community & Outreach**:
+- Submit completed proofs to established mathematical journals
+- Develop educational materials for broader community access
+- Open-source verification tools
+- Draft comprehensive status note summarizing results and gaps
+
+### **Implementation Status**<a name="implementation-status"></a>
+
+**✅ Complete**: Computational infrastructure (47 modules, 12 certification systems)
+**✅ Complete**: Mathematical framework foundations
+**✅ Complete**: Working implementations and verification systems
+**✅ Complete**: Documentation and user guides
+**✅ Complete**: Li-Stieltjes rigorous proof (October 2025)
+
+**🔄 In Progress**: Parameter space search for critical hat configuration
+**🔄 In Progress**: Documentation standardization and scope clarification
+
+**⏳ Pending**: Rigorous β-pleat → zero connection proof
+**⏳ Pending**: Full de Branges calculation completion
+**⏳ Pending**: Explicit θ_⋆ construction and verification

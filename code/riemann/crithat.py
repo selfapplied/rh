@@ -23,10 +23,11 @@ This represents the definitive implementation incorporating the breakthrough
 discovery that unblocks the main proof pathway.
 """
 
-from typing import Dict, List, Tuple, Any, Optional
 from dataclasses import dataclass
-from scipy.integrate import quad
+from typing import Any, Dict, List, Tuple
+
 import numpy as np
+from scipy.integrate import quad
 
 
 @dataclass
@@ -225,7 +226,7 @@ class CriticalHatScanner:
                     
                     # Compute Li coefficients for positivity check
                     lambda_values = [kernel.li_coefficient(n) for n in range(1, 9)]
-                    min_lambda = min(lambda_values)
+                    min(lambda_values)
                     all_positive = all(lam >= -1e-8 for lam in lambda_values)
                     
                     # Compute score

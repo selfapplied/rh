@@ -5,7 +5,6 @@ from dataclasses import dataclass
 from typing import Callable, Dict, List, Tuple
 
 
-
 @dataclass
 class TwoAdicPyramid:
     """2-adic pyramid for multi-resolution analysis"""
