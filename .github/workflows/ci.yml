@@ -17,6 +17,8 @@ jobs:
           python-version: '3.11'
       - name: Set up uv
         uses: astral-sh/setup-uv@v3
+      - name: Create virtual environment with uv
+        run: uv venv
       - name: Install dependencies with uv
         run: |
           if [ -s requirements.txt ]; then uv pip install -r requirements.txt; fi
@@ -34,6 +36,8 @@ jobs:
           python-version: '3.11'
       - name: Set up uv
         uses: astral-sh/setup-uv@v3
+      - name: Create virtual environment with uv
+        run: uv venv
       - name: Install runtime deps
         run: |
           uv pip install pytest
