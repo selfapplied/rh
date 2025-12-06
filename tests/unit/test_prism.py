@@ -1,6 +1,6 @@
 
 import pytest
-from tools import run_refraction_scan
+from tools.prism import run_refraction_scan
 
 
 @pytest.mark.parametrize(
