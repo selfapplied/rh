@@ -37,8 +37,8 @@ class HarmonicDivergenceResult:
     ln_component: complex
     zeta_component: complex
     tan_component: complex
-    sin_component: float
-    cos_component: float
+    sin_component: complex  # Can be complex for complex inputs
+    cos_component: complex  # Can be complex for complex inputs
     magnitude: float
     phase: float
 
@@ -67,7 +67,6 @@ class HarmonicDivergenceOperator:
     def __init__(self):
         """Initialize the Harmonic Divergence Operator."""
         self.pi = np.pi
-        self.euler_gamma = np.euler_gamma
 
     def _safe_ln(self, x: complex) -> complex:
         """

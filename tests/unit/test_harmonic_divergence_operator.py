@@ -23,7 +23,6 @@ class TestHarmonicDivergenceOperator:
         """Test that the operator initializes correctly."""
         assert operator is not None
         assert operator.pi == np.pi
-        assert operator.euler_gamma == np.euler_gamma
 
     def test_evaluate_positive_real(self, operator):
         """Test evaluation at positive real numbers."""
@@ -238,12 +237,14 @@ class TestHarmonicDivergenceOperator:
 
     def test_harmonic_oscillation_period(self, operator):
         """Test that harmonic components have correct periodicity."""
-        # sin(πx) has period 2
+        # sin(πx) has period 2 in x (since sin has period 2π in its argument)
         result_0 = operator.evaluate(0.5)
         result_2 = operator.evaluate(2.5)  # 0.5 + 2
 
-        # sin(π·0.5) should equal sin(π·2.5)
-        assert np.abs(result_0.sin_component - result_2.sin_component) < 1e-10
+        # sin(π·0.5) = sin(π/2) = 1 and sin(π·2.5) = sin(5π/2) = 1
+        # Both should equal 1 due to the period of sin being 2π
+        assert np.abs(result_0.sin_component - 1.0) < 1e-10
+        assert np.abs(result_2.sin_component - 1.0) < 1e-10
 
     def test_integer_lattice_cancellation(self, operator):
         """Test that sin(πx) enforces integer lattice cancellation."""
